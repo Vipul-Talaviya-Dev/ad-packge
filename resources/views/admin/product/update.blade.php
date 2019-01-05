@@ -46,7 +46,7 @@
                     <div class="col-md-3">
                         <div class="form-group">
                             <label>Main Category: <span class="text-danger">*</span></label>
-                            <select data-placeholder="Select Main Category" class="form-control category" required name="categoryId">
+                            <select data-placeholder="Select Main Category" class="form-control category" name="categoryId">
                                 <option value="">-- Select Main Category --</option>
                                 @foreach($categories as $category)
                                 <option value="{{ $category->id }}" {{ old('categoryId') == $category->id ? 'selected' : '' }}>{{ $category->name }}</option>
