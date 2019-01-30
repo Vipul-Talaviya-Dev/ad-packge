@@ -1,0 +1,528 @@
+table, tr, td {
+  color: #000;
+  font-weight: normal;
+}
+table.subgroupChart {
+  background-color: #ffffff;
+}
+@media only screen and (min-width: 1260px) {
+  .webSubhead {
+    font-size: 10pt;
+    height: 24px;
+  }
+  .webSubhead h2 {
+    font-size: 10pt;
+  }
+  .chartHeadLargeBaseline {
+    font-size: 12pt;
+    height: 24px;
+  }
+  .chartHeadLargeBaselines {
+    font-size: 12pt;
+    height: 24px;
+  }
+
+  .chartHeadLargeBaselineChart {
+    font-size: 12pt;
+    height: 24px;
+  }
+
+  .chartCopyLargeOne {
+    font-size: 12pt;
+    width: 5pt;
+    height: 24px;
+  }
+
+  .ChartCopyLargeW4H19BL1d5BR0d0BT0d75BB0d0 {
+    font-size: 12pt;
+    width: 5pt;
+    height: 24px;
+  }
+
+  .chartHeadLargeBaselineLast {
+    font-size: 12pt;
+    height: 24px;
+  }
+
+  .chartCopyLargeTwo {
+    font-size: 12pt;
+    width: 49pt;
+    height: 24px;
+  }
+  .chartCopyLargeRedThree {
+    font-size: 12pt;
+    width: 95pt;
+    height: 24px;
+  }
+}
+.chartQtyInput {
+  font-size: 13px;
+  width: 53px;
+  height: 25px;
+  text-align: center;
+}
+.chartCopyLargeCtrEight {
+  padding: 5px;
+  font-family: "AvantGardeGothic", Arial, Helvetica, sans-serif;
+  font-size: 10pt;
+  font-style: normal;
+  line-height: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  color: #000000;
+  text-decoration: none;
+  text-align: center;
+  vertical-align: middle;
+  text-indent: 0pt;
+  white-space: nowrap;
+  width: 29pt;
+  height: 19px;
+  BORDER-TOP: #999999 0.75pt solid;
+  BORDER-BOTTOM: #999999 0.75pt solid;
+  BORDER-LEFT: #999999 0.75pt solid;
+  BORDER-RIGHT: #999999 1.5pt solid;
+}
+.button2, a.button2 {
+  background-color: #fff;
+  background-image: -webkit-linear-gradient(#fff 50%,#e7e7e7 50%,#f1f1f1);
+  background-image: linear-gradient(#fff 50%,#e7e7e7 50%,#f1f1f1);
+  border: 2px solid #f00;
+  border-radius: 3px;
+  color: #036;
+  cursor: pointer;
+  display: inline-block;
+  padding: .1em .5em;
+  text-decoration: none;
+}
+.chartCopyLargeCtrSeven {
+  font-family: "AvantGardeGothic", Arial, Helvetica, sans-serif;
+  font-size: 10pt;
+  font-style: normal;
+  line-height: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  color: #000000;
+  text-decoration: none;
+  text-align: center;
+  vertical-align: middle;
+  text-indent: 0pt;
+  white-space: nowrap;
+  width:  62px;
+  height: 30px;
+  BORDER-TOP: #999999 0.75pt solid;
+  BORDER-BOTTOM: #999999 0.75pt solid;
+  BORDER-LEFT: #999999 0.75pt solid;
+  BORDER-RIGHT: #999999 0.75pt solid;
+}
+
+.chartCopyLargeCtrRedSix {
+  font-family: "AvantGardeGothic", Arial, Helvetica, sans-serif;
+  font-size: 10pt;
+  font-style: normal;
+  line-height: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  color: #FF0000;
+  text-decoration: none;
+  text-align: center;
+  vertical-align: middle;
+  text-indent: 0pt;
+  white-space: nowrap;
+  width: 35pt;
+  height: 19px;
+  BORDER-TOP: #999999 0.0pt solid;
+  BORDER-BOTTOM: #999999 0.75pt solid;
+  BORDER-LEFT: #999999 0.75pt solid;
+  BORDER-RIGHT: #999999 0.75pt solid;
+}
+
+.chartCopyLargeRedFive {
+  font-family: "AvantGardeGothic", Arial, Helvetica, sans-serif;
+  font-size: 10pt;
+  font-style: normal;
+  line-height: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  color: #FF0000;
+  text-decoration: none;
+  text-align: left;
+  vertical-align: middle;
+  white-space: nowrap;
+  padding-left: 3pt;
+  width: 25pt;
+  height: 19px;
+  BORDER-TOP: #999999 0.0pt solid;
+  BORDER-BOTTOM: #999999 0.75pt solid;
+  BORDER-LEFT: #999999 0.0pt solid;
+  BORDER-RIGHT: #999999 0.75pt solid;
+}
+
+.chartCopyLargeCtrRedFour {
+  font-family: "AvantGardeGothic", Arial, Helvetica, sans-serif;
+  font-size: 10pt;
+  font-style: normal;
+  line-height: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  color: #FF0000;
+  text-decoration: none;
+  text-align: center;
+  vertical-align: middle;
+  text-indent: 0pt;
+  white-space: nowrap;
+  width: 2pt;
+  height: 19px;
+  BORDER-TOP: #999999 0.0pt solid;
+  BORDER-BOTTOM: #999999 0.75pt solid;
+  BORDER-LEFT: #999999 0.0pt solid;
+  BORDER-RIGHT: #999999 0.0pt solid;
+}
+.chartCopyLargeRightRedThree {
+  font-family: "AvantGardeGothic", Arial, Helvetica, sans-serif;
+  font-size: 10pt;
+  font-style: normal;
+  line-height: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  color: #FF0000;
+  text-decoration: none;
+  text-align: right;
+  vertical-align: middle;
+  text-indent: 0pt;
+  white-space: nowrap;
+  padding-right: 3pt;
+  width: 18pt;
+  height: 19px;
+  BORDER-TOP: #999999 0.0pt solid;
+  BORDER-BOTTOM: #999999 0.75pt solid;
+  BORDER-LEFT: #999999 0.75pt solid;
+  BORDER-RIGHT: #999999 0.0pt solid;
+}
+.priceCellwebPriceThird {
+  font-family: "AvantGardeGothic", Arial, Helvetica, sans-serif;
+  font-size: 10pt;
+  font-style: normal;
+  line-height: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  color: #000000;
+  text-decoration: none;
+  text-align: center;
+  vertical-align: middle;
+  text-indent: 0pt;
+  white-space: nowrap;
+  padding-right: 9pt;
+  width: 30pt;
+  height: 19px;
+  BORDER-TOP: #999999 0.0pt solid;
+  BORDER-BOTTOM: #999999 0.75pt solid;
+  BORDER-LEFT: #999999 0.0pt solid;
+  BORDER-RIGHT: #999999 0.75pt solid;
+}
+.priceCellwebPriceSecond {
+  font-family: "AvantGardeGothic", Arial, Helvetica, sans-serif;
+  font-size: 10pt;
+  font-style: normal;
+  line-height: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  color: #000000;
+  text-decoration: none;
+  text-align: center;
+  vertical-align: middle;
+  text-indent: 0pt;
+  white-space: nowrap;
+  padding-right: 9pt;
+  width: 30pt;
+  height: 19px;
+  BORDER-TOP: #999999 0.0pt solid;
+  BORDER-BOTTOM: #999999 0.75pt solid;
+  BORDER-LEFT: #999999 0.0pt solid;
+  BORDER-RIGHT: #999999 0.0pt solid;
+}
+.priceCellwebPriceFirst {
+  font-family: "AvantGardeGothic", Arial, Helvetica, sans-serif;
+  font-size: 10pt;
+  font-style: normal;
+  line-height: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  color: #000000;
+  text-decoration: none;
+  text-align: right;
+  vertical-align: middle;
+  text-indent: 0pt;
+  white-space: nowrap;
+  padding-right: 12pt;
+  width: 30pt;
+  height: 19px;
+  BORDER-TOP: #999999 0.0pt solid;
+  BORDER-BOTTOM: #999999 0.75pt solid;
+  BORDER-LEFT: #999999 0.75pt solid;
+  BORDER-RIGHT: #999999 0.0pt solid;
+}
+.chartCopyLargeRedThree {
+  font-family: "AvantGardeGothic", Arial, Helvetica, sans-serif;
+  font-size: 10pt;
+  font-style: normal;
+  line-height: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  color: #FF0000;
+  text-decoration: none;
+  text-align: left;
+  vertical-align: middle;
+  white-space: nowrap;
+  padding-left: 3pt;
+  width: 74pt;
+  height: 19px;
+  BORDER-TOP: #999999 0.0pt solid;
+  BORDER-BOTTOM: #999999 0.75pt solid;
+  BORDER-LEFT: #999999 0.75pt solid;
+  BORDER-RIGHT: #999999 0.75pt solid;
+}
+.chartCopyLargeTwo {
+  font-family: "AvantGardeGothic", Arial, Helvetica, sans-serif;
+  font-size: 10pt;
+  font-style: normal;
+  line-height: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  color: #000000;
+  text-decoration: none;
+  text-align: left;
+  vertical-align: middle;
+  white-space: nowrap;
+  padding-left: 3pt;
+  width: 38pt;
+  height: 19px;
+  BORDER-TOP: #999999 0.0pt solid;
+  BORDER-BOTTOM: #999999 0.75pt solid;
+  BORDER-LEFT: #999999 0.0pt solid;
+  BORDER-RIGHT: #999999 0.75pt solid;
+}
+.chartCopyLargeTwo {
+  font-family: "AvantGardeGothic", Arial, Helvetica, sans-serif;
+  font-size: 10pt;
+  font-style: normal;
+  line-height: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  color: #000000;
+  text-decoration: none;
+  text-align: left;
+  vertical-align: middle;
+  white-space: nowrap;
+  padding-left: 3pt;
+  width: 38pt;
+  height: 19px;
+  BORDER-TOP: #999999 0.0pt solid;
+  BORDER-BOTTOM: #999999 0.75pt solid;
+  BORDER-LEFT: #999999 0.0pt solid;
+  BORDER-RIGHT: #999999 0.75pt solid;
+}
+.chartHeadLargeBaselineLast {
+  font-family: "AvantGardeGothic", Arial, Helvetica, sans-serif;
+  font-size: 10pt;
+  font-style: normal;
+  line-height: normal;
+  font-weight: bold;
+  font-variant: normal;
+  text-transform: none;
+  color: #000000;
+  text-decoration: none;
+  text-align: center;
+  vertical-align: middle;
+  text-indent: 0pt;
+  white-space: nowrap;
+  background-color: #FFFFFF;
+  height: 19px;
+  BORDER-TOP: #999999 0.75pt solid;
+  BORDER-BOTTOM: #999999 0.75pt solid;
+  BORDER-LEFT: #999999 0.75pt solid;
+  BORDER-RIGHT: #999999 1.5pt solid;
+}
+
+.ChartCopyLargeW4H19BL1d5BR0d0BT0d75BB0d0 {
+  font-family: "AvantGardeGothic", Arial, Helvetica, sans-serif;
+  font-size: 10pt;
+  font-style: normal;
+  line-height: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  color: #000000;
+  text-decoration: none;
+  text-align: left;
+  vertical-align: middle;
+  white-space: nowrap;
+  padding-left: 3pt;
+  width: 4pt;
+  height: 19px;
+  BORDER-TOP: #999999 0.75pt solid;
+  BORDER-BOTTOM: #999999 0.0pt solid;
+  BORDER-LEFT: #999999 1.5pt solid;
+  BORDER-RIGHT: #999999 0.0pt solid;
+}
+.chartHeadLargeBaselines {
+  font-family: "AvantGardeGothic", Arial, Helvetica, sans-serif;
+  font-size: 10pt;
+  font-style: normal;
+  line-height: normal;
+  font-weight: bold;
+  font-variant: normal;
+  text-transform: none;
+  color: #000000;
+  text-decoration: none;
+  text-align: center;
+  vertical-align: middle;
+  text-indent: 0pt;
+  white-space: nowrap;
+  background-color: #FFFFFF;
+  height: 19px;
+  BORDER-TOP: #999999 0.75pt solid;
+  BORDER-BOTTOM: #999999 0.75pt solid;
+  BORDER-LEFT: #999999 0.75pt solid;
+  BORDER-RIGHT: #999999 0.75pt solid;
+}
+
+
+.chartCopyLargeOne {
+  font-family: "AvantGardeGothic", Arial, Helvetica, sans-serif;
+  font-size: 10pt;
+  font-style: normal;
+  line-height: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  color: #000000;
+  text-decoration: none;
+  text-align: left;
+  vertical-align: middle;
+  white-space: nowrap;
+  padding-left: 3pt;
+  width: 4pt;
+  height: 19px;
+  BORDER-TOP: #999999 0.0pt solid;
+  BORDER-BOTTOM: #999999 0.75pt solid;
+  BORDER-LEFT: #999999 1.5pt solid;
+  BORDER-RIGHT: #999999 0.0pt solid;
+}
+
+.chartHeadLargeBaselineChart {
+  font-family: "AvantGardeGothic", Arial, Helvetica, sans-serif;
+  font-size: 10pt;
+  font-style: normal;
+  line-height: normal;
+  font-weight: bold;
+  font-variant: normal;
+  text-transform: none;
+  color: #000000;
+  text-decoration: none;
+  text-align: center;
+  vertical-align: middle;
+  text-indent: 0pt;
+  white-space: nowrap;
+  background-color: #FFFFFF;
+  height: 19px;
+  BORDER-TOP: #999999 0.75pt solid;
+  BORDER-BOTTOM: #999999 0.75pt solid;
+  BORDER-LEFT: #999999 0.75pt solid;
+  BORDER-RIGHT: #999999 0.0pt solid;
+}
+
+.chartHeadLargeBaselines {
+  font-family: "AvantGardeGothic", Arial, Helvetica, sans-serif;
+  font-size: 10pt;
+  font-style: normal;
+  line-height: normal;
+  font-weight: bold;
+  font-variant: normal;
+  text-transform: none;
+  color: #000000;
+  text-decoration: none;
+  text-align: center;
+  vertical-align: middle;
+  text-indent: 0pt;
+  white-space: nowrap;
+  background-color: #FFFFFF;
+  height: 19px;
+  BORDER-TOP: #999999 0.75pt solid;
+  BORDER-BOTTOM: #999999 0.75pt solid;
+  BORDER-LEFT: #999999 0.75pt solid;
+  BORDER-RIGHT: #999999 0.75pt solid;
+}
+
+.chartHeadLargeBaseline {
+  font-family: "AvantGardeGothic", Arial, Helvetica, sans-serif;
+  font-size: 10pt;
+  font-style: normal;
+  line-height: normal;
+  font-weight: bold;
+  font-variant: normal;
+  text-transform: none;
+  color: #000000;
+  text-decoration: none;
+  text-align: center;
+  vertical-align: middle;
+  text-indent: 0pt;
+  white-space: nowrap;
+  background-color: #FFFFFF;
+  height: 19px;
+  BORDER-TOP: #999999 0.75pt solid;
+  BORDER-BOTTOM: #999999 0.75pt solid;
+  BORDER-LEFT: #999999 1.5pt solid;
+  BORDER-RIGHT: #999999 0.75pt solid;
+}
+
+.webSubhead {
+  font-family: "AvantGardeGothic", Arial, Helvetica, sans-serif;
+  font-size: 9pt;
+  font-style: normal;
+  line-height: normal;
+  font-weight: bold;
+  font-variant: normal;
+  text-transform: none;
+  color: #000000;
+  text-decoration: none;
+  text-align: left;
+  vertical-align: bottom;
+  text-indent: 0pt;
+  white-space: nowrap;
+  height: 19px;
+  BORDER-TOP: #999999 0.0pt solid;
+  BORDER-BOTTOM: #999999 0.75pt solid;
+  BORDER-LEFT: #999999 0.0pt solid;
+  BORDER-RIGHT: #999999 0.0pt solid;
+}
+.webSubhead h2 {
+  font-family: "AvantGardeGothic", Arial, Helvetica, sans-serif;
+  font-size: 9pt;
+  font-style: normal;
+  line-height: normal;
+  font-weight: bold;
+  font-variant: normal;
+  text-transform: none;
+  color: #000000;
+  text-decoration: none;
+  text-align: left;
+  vertical-align: bottom;
+  text-indent: 0pt;
+  white-space: nowrap;
+  margin: 0px;
+}
+tr.subgroupChartHeader {
+  background-color: #ffffff;
+}

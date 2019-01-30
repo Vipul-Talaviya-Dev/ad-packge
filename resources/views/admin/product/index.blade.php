@@ -35,43 +35,6 @@
                     <hr/>
                     <div class="container-fluid">
                         <div class="content">
-                            <form class="form-horizontal" method="get" action="">
-                                <div class="form-group">
-                                    <div class="col-md-3">
-                                        <label>Category</label>
-                                        <select id="category" class="form-control select-results-color" name="category"
-                                                data-placeholder="Select Category">
-                                            <option value="">-- Select Category --</option>
-                                            @if(isset($categories))
-                                                @foreach($categories as $category)
-                                                    <option value="{{ $category->id }}" {{ request('category') && request('category') == $category->id ? 'selected' : '' }}>
-                                                        {{ $category->name }}
-                                                    </option>
-                                                @endforeach
-                                            @endif
-                                        </select>
-                                        @if($errors->get('category'))
-                                            @foreach($errors->get('category') as $error)
-                                                <span style="color: red;">{{$error}}</span>
-                                            @endforeach
-                                        @endif
-                                    </div>
-                                    <div class="col-md-3">
-                                        <label>Search: </label>
-                                        <input type="text" name="search" class="form-control" style="background: #25A296; color: white" placeholder="Search Text" autocomplete="off">
-                                    </div>
-                                    <div class="col-md-2">
-                                        <a href="{{ route('admin.products') }}" class="btn btn-danger form-control" style="margin-top: 27px;">
-                                            Reset
-                                        </a>
-                                    </div>
-                                    <div class="pull-right col-md-2">
-                                        <input type="submit" {{ request('store') && request('category') && request('subCategory') ? '' : 'disabled' }} id="search" class="btn btn-info form-control" style="margin-top: 27px;">
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
-                        <div class="content">
                             <div class="panel panel-flat">
                                 <table class="table">
                                     <thead>

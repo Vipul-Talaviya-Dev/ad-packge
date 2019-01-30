@@ -11,10 +11,9 @@
 |
 */
 
-Route::get('/', function () {
-    return view('user.index');
-});
-
-Route::get('about-us', function () {
-    return view('user.about-us');
+Route::group(['namespace' => 'User', 'as' => 'user.'], function () {
+    Route::get('/', 'HomeController@index')->name('index');
+    Route::get('about-us', 'HomeController@aboutUs')->name('aboutUs');
+    Route::get('boxes', 'ProductController@index')->name('products');
+    Route::get('product/detail/{productSlug}', 'ProductController@detail')->name('product.detail');
 });

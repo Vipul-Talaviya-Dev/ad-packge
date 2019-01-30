@@ -103,7 +103,7 @@
                             <li><a href="/">Home</a></li>
                             <li><a href="/about-us">About</a></li>
                             <li><a href="javascript:void(0);">Services</a></li>
-                            <li><a href="javascript:void(0);">Projects</a></li>
+                            <li><a href="{{ route('user.products') }}">Boxes</a></li>
                             <li><a href="javascript:void(0);">Contact</a></li>
                         </ul>
                     </div><!-- end of nav-collapse -->

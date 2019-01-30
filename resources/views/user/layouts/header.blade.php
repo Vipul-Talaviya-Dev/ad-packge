@@ -80,10 +80,10 @@
             <div id="navbar" class="navbar-collapse collapse navigation-holder">
                 <button class="close-navbar"><i class="fa fa-close"></i></button>
                 <ul class="nav navbar-nav">
-                    <li><a href="javascript:void(0);">Home</a></li>
-                    <li><a href="/">About</a></li>
+                    <li><a href="{{ route('user.index') }}">Home</a></li>
+                    <li><a href="{{ route('user.aboutUs') }}">About</a></li>
                     <li><a href="javascript:void(0);">Services</a></li>
-                    <li><a href="javascript:void(0);">Projects</a></li>
+                    <li><a href="{{ route('user.products') }}">Boxes</a></li>
                     <li><a href="javascript:void(0);">Contact</a></li>
                 </ul>
             </div><!-- end of nav-collapse -->
