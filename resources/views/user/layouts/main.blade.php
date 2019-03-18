@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="author" content="AD GRAPHICS HUB">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     @yield('meta')
 
     <title>@yield('title') | Ad Packing</title>
@@ -25,6 +26,7 @@
     <link href="/front/css/jquery.mCustomScrollbar.min.css" rel="stylesheet">
     <!-- Custom styles for this template -->
     <link href="/front/css/style.css" rel="stylesheet">
+    <link href="/front/css/toast.css" rel="stylesheet" type="text/css" media="all" />
     <link href="/front/css/color-style.css" rel="stylesheet" title="switchstyle">
     @yield('css')
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -36,6 +38,7 @@
 </head>
 
 <body>
+    <span class="your-cart"></span>
 <!-- start page-wrapper -->
     <div class="page-wrapper">
         <!-- start preloader -->
@@ -65,9 +68,21 @@
     <!-- Plugins for this template -->
     <script src="/front/js/jquery-plugin-collection.js"></script>
     <script src="/front/js/jquery.mCustomScrollbar.js"></script>
-
+    <script src="/front/js/toast.js" type="text/javascript"></script>
     <!-- Custom script for this template -->
     <script src="/front/js/script.js"></script>
+    <script src="/front/js/custom-script.js"></script>
     @yield('js')
+    <script type="text/javascript">
+        $(document).ready(function() {
+            @if(\Session::get('error'))
+            toastr.warning("{{ \Session::get('error') }}");
+            @endif
+
+            @if(\Session::get('success'))
+            toastr.success("{{ \Session::get('success') }}");
+            @endif
+        });
+    </script>
 </body>
 </html>

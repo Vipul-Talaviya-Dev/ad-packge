@@ -8168,3 +8168,129 @@ img {
 }
 
 /*# sourceMappingURL=style.css.map */
+/**
+ * Cart Show
+ */
+.total {
+    display: inline-block;
+    vertical-align: middle;
+}
+#backetItem {
+  position: absolute;
+  top: -15px;
+  right: 7%;
+  padding: 2px;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: #fdc900;
+  color: white;
+  text-align: center;
+}
+/*
+* Check out
+ */
+/*-- checkout --*/
+.checkout h3{
+  font-size:1em;
+  color:#212121;
+  text-transform:uppercase;
+  margin:0 0 3em;
+}
+.checkout h3 span{
+  color:#ff9b05;
+}
+table.timetable_sub {
+  width:100%;
+  margin:0 auto;
+}
+.timetable_sub thead {
+    background:#F2F2F2;
+}
+.timetable_sub th{
+    background:none;
+    color:#212121 !important;
+    text-transform: capitalize;
+    font-size: 13px;
+    border-right: 1px solid #C5C5C5;
+    border-top: 1px solid #C5C5C5;
+}
+.timetable_sub th:nth-child(1) {
+    border-left: 1px solid #C5C5C5;
+}
+.timetable_sub th, .timetable_sub td {
+    text-align: center;
+    padding: 7px;
+    font-size: 14px;
+    color: #212121;
+}
+.timetable_sub td {
+  border:1px solid #CDCDCD;
+}
+td.invert-image a img {
+    width:30%;
+    margin: 0 auto;
+}
+.rem{
+  position:relative;
+}
+.value-minus, .value-plus, .value-minus1, .value-plus1 {
+    height: 40px;
+    line-height: 24px;
+    width: 40px;
+    margin-right: 3px;
+    display: inline-block;
+    cursor: pointer;
+    position: relative;
+    font-size: 18px;
+    color: #fff;
+    text-align: center;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    border: 1px solid #b2b2b2;
+    vertical-align: bottom;
+}
+.quantity-select .entry.value-minus:before, .quantity-select .entry.value-plus:before, .quantity-select .entry.value-minus1:before, .quantity-select .entry.value-plus1:before {
+    content: "";
+    width: 13px;
+    height: 2px;
+    background: #000;
+    left: 50%;
+    margin-left: -7px;
+    top: 50%;
+    margin-top: -0.5px;
+    position: absolute;
+}
+.quantity-select .entry.value-plus:after, .quantity-select .entry.value-plus1:after {
+    content: "";
+    height: 13px;
+    width: 2px;
+    background: #000;
+    left: 50%;
+    margin-left: -1.4px;
+    top: 50%;
+    margin-top: -6.2px;
+    position: absolute;
+}
+.value, .value1 {
+    cursor: default;
+    width: 40px;
+    height: 40px;
+    padding: 8px 0px;
+    color: #A9A9A9;
+    line-height: 24px;
+    border: 1px solid #E5E5E5;
+    background-color: #E5E5E5;
+    text-align: center;
+    display: inline-block;
+    margin-right: 3px;
+}
+.removeItem {
+    background-color: transparent;
+    color: #000;
+    border: 1px solid #fff;
+}
+.has-error {
+  color: red;
+  display: inline-block;
+}

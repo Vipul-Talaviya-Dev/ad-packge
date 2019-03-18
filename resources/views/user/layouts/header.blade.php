@@ -90,39 +90,12 @@
 
             <div class="cart-contact">
                 <div class="mini-cart">
-                    <button class="cart-toggle-btn"> <i class="fi flaticon-shopping-cart"></i> Cart (2) </button>
-
-                    <div class="top-cart-content">
-                        <div class="top-cart-title">
-                            <p>Shopping Cart</p>
+                    <a href="javascript:void(0);" class="" id="cart-list">
+                        <i class="fi flaticon-shopping-cart"></i>
+                        <div class="total">
+                            <span id="backetItem" class="backetItem">{{ ((\Session::get('cart') =="") ? 0 : count(\Session::get('cart'))) }}</span>
                         </div>
-                        <div class="top-cart-items">
-                            <div class="top-cart-item clearfix">
-                                <div class="top-cart-item-image">
-                                    <a href="javascript:void(0);"><img src="/front/images/shop/small/1.jpg" alt="Blue Round-Neck Tshirt"></a>
-                                </div>
-                                <div class="top-cart-item-des">
-                                    <a href="javascript:void(0);">Blue Round-Neck Tshirt</a>
-                                    <span class="top-cart-item-price">$19.99</span>
-                                    <span class="top-cart-item-quantity">x 2</span>
-                                </div>
-                            </div>
-                            <div class="top-cart-item clearfix">
-                                <div class="top-cart-item-image">
-                                    <a href="javascript:void(0);"><img src="/front/images/shop/small/6.jpg" alt="Light Blue Denim Dress"></a>
-                                </div>
-                                <div class="top-cart-item-des">
-                                    <a href="javascript:void(0);">Light Blue Denim Dress</a>
-                                    <span class="top-cart-item-price">$24.99</span>
-                                    <span class="top-cart-item-quantity">x 3</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="top-cart-action clearfix">
-                            <span class="fleft top-checkout-price">$114.95</span>
-                            <a href="javascript:void(0);" class="theme-btn">View Cart</a>
-                        </div>
-                    </div>
+                    </a>
                 </div>
             </div>
 

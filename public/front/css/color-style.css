@@ -2768,7 +2768,7 @@ img {
   }
 }
 
-.cart-contact .mini-cart > button {
+.cart-contact .mini-cart > a {
   font-size: 15px;
   font-size: 1rem;
   color: #0d1d36;
@@ -2781,14 +2781,14 @@ img {
 }
 
 @media (max-width: 767px) {
-  .cart-contact .mini-cart > button {
+  .cart-contact .mini-cart > a {
     font-size: 13px;
     font-size: 0.86667rem;
     margin-right: 15px;
   }
 }
 
-.cart-contact .mini-cart > button i:before {
+.cart-contact .mini-cart > a i:before {
   font-size: 18px;
   font-size: 1.2rem;
   color: #0d1d36;
@@ -2797,7 +2797,7 @@ img {
 }
 
 @media (max-width: 767px) {
-  .cart-contact .mini-cart > button i:before {
+  .cart-contact .mini-cart > a i:before {
     font-size: 15px;
     font-size: 1rem;
   }
@@ -2994,7 +2994,7 @@ img {
   }
 }
 
-.header-style-2 .cart-contact .mini-cart > button, .header-style-3 .cart-contact .mini-cart > button, .header-style-4 .cart-contact .mini-cart > button, .header-style-5 .cart-contact .mini-cart > button, .header-style-6 .cart-contact .mini-cart > button {
+.header-style-2 .cart-contact .mini-cart > a, .header-style-3 .cart-contact .mini-cart > a, .header-style-4 .cart-contact .mini-cart > a, .header-style-5 .cart-contact .mini-cart > a, .header-style-6 .cart-contact .mini-cart > a {
   margin-right: 0;
 }
 
@@ -3077,8 +3077,8 @@ img {
   .header-style-3 #navbar > ul > li > a:hover {
     color: #3598db;
   }
-  .header-style-3 .cart-contact .mini-cart > button i:before,
-  .header-style-3 .cart-contact .mini-cart > button {
+  .header-style-3 .cart-contact .mini-cart > a i:before,
+  .header-style-3 .cart-contact .mini-cart > a {
     color: #3598db;
   }
 }
@@ -3087,8 +3087,8 @@ img {
   .header-style-3 .navigation {
     background: #0c171d;
   }
-  .header-style-3 .cart-contact .mini-cart > button i:before,
-  .header-style-3 .cart-contact .mini-cart > button {
+  .header-style-3 .cart-contact .mini-cart > a i:before,
+  .header-style-3 .cart-contact .mini-cart > a {
     color: #fff;
   }
 }

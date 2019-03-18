@@ -1,9 +1,5 @@
 @extends('user.layouts.main')
 
-@section('meta')
-<meta name="csrf-token" content="{{ csrf_token() }}">
-@endsection
-
 @section('css')
 <link rel="stylesheet" type="text/css" href="/front/css/custom.css">
 @endsection
@@ -49,7 +45,7 @@
                                         <td class="chartHeadLargeBaselines" colspan="4" style="min-width: 321px; max-width: 321px;">PRICE PER BOX </td>
                                         <td class="chartHeadLargeBaselines" colspan="3" rowspan="2" style="min-width: 92px; max-width: 93px;">BUNDLE/<br>BALE QTY.</td>
                                         <td class="chartHeadLargeBaselines" rowspan="2" style="min-width: 62px; max-width: 62px;">LBS./<br>WT.</td>
-                                        <td class="chartHeadLargeBaselineLast" colspan="2" rowspan="2" style="min-width: 104px; max-width: 106px;">ADD TO<br>CART</td>
+                                        <!-- <td class="chartHeadLargeBaselineLast" colspan="2" rowspan="2" style="min-width: 104px; max-width: 106px;">ADD TO<br>CART</td> -->
                                     </tr>
                                     <tr class="subgroupChartHeader">
                                         <td class="chartHeadLargeBaselineChart">100</td>
@@ -73,10 +69,10 @@
                                         <td class="chartCopyLargeCtrRedFour">/</td>
                                         <td class="chartCopyLargeRedFive">{{ $product->piece }}</td>
                                         <td class="chartCopyLargeCtrRedSix">{{ $product->weight }}</td>
-                                        <td class="chartCopyLargeCtrSeven">
-                                            <input type="text" id="qty" name="qty" class="chartQtyInput ea-triggers-bound" maxlength="8" value="10">
-                                        </td>
-                                        <td class="chartCopyLargeCtrEight"><a id="cart{{ $product->id }}" class="button2 chartAddButton" href="javascript:void(0);">ADD</a></td>
+                                        <!-- <td class="chartCopyLargeCtrSeven">
+                                            <input type="text" id="qty" name="qty" class="chartQtyInput ea-triggers-bound" maxlength="8" value="{{ $product->pack }}">
+                                        </td> -->
+                                        <!-- <td class="chartCopyLargeCtrEight"><a id="cart{{ $product->id }}" class="button2 chartAddButton" href="javascript:void(0);">ADD</a></td> -->
                                     </tr>
                                     @endforeach
                                 </tbody>
