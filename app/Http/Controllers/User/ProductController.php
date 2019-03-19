@@ -2,8 +2,12 @@
 
 namespace App\Http\Controllers\User;
 
+use Mail;
+use Auth;
 use Session;
 use App\Models\Product;
+use App\Models\Order;
+use App\Models\OrderProduct;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -128,12 +132,122 @@ class ProductController extends Controller
             return redirect(route('user.loginForm'));
         }
         $user = Auth::user();
-        $deliverCharge = AppContent::find(1);
+
         return view('user.order-shipping', [
             'addresses' => $user->addresses,
-            'deliverCharge' => $deliverCharge->delivery_charge,
-            'cart' => false,
-            'footer' => false
+        ]);
+    }
+
+    public function shippingDetail(Request $request)
+    {
+        if(Session::get('order') == null) {
+            return redirect(route('user.index'));
+        }
+        $user = Auth::user();
+        
+        if($request->get('addressOption') == "") {
+            return redirect()->back()->with(['error' => 'Select Your Address...']);
+        }
+
+        Session::put('addressId', $request->get('addressOption'));
+        return redirect(route('user.payment'));
+    }
+
+    public function payment()
+    {
+        if(Session::get('order') == null) {
+            return redirect(route('user.index'));
+        }
+        $user = Auth::user();
+        $address = $user->addresses()->find(Session::get('addressId'));
+
+        return view('user.payment', [
+            'user' => $user,
+            'address' => $address,
+            'deliverCharge' => 0,
+        ]);
+    }
+
+    public function orderPlace(Request $request)
+    {
+        if(Session::get('order') == null) {
+            return redirect(route('user.index'));
+        }
+
+        $user = Auth::user();
+        $order = new Order;
+        $order->user_id = $user->id;
+        $order->address_id = Session::get('addressId');
+        // $order->payment_mode = $request->get('payment_option') ? $request->get('payment_option') : 2;
+        $order->price = Session::get('discount') ?: 0;
+        $order->cart_amount = (Session::get('order')['final_amount'] - Session::get('discount')) + 0;
+        $order->total_amount = (Session::get('order')['final_amount'] - Session::get('discount')) + 0;
+        $order->shipping_charge = 0;
+        $order->gst = 0;
+        $order->qty = 0;
+        $order->payment_reference = 0;
+        $order->payment_status = 1;
+        $order->order_status = 2;
+        $order->save();
+        
+        $orderId = $order->id;
+        foreach(Session::get('order')['product'] as $key => $data) {
+            $product = Product::find($data['product_id']);
+            $orderProduct = new OrderProduct;
+            $orderProduct->order_id = $order->id;
+            $orderProduct->user_id = $user->id;
+            $orderProduct->address_id = Session::get('addressId');
+            $orderProduct->product_id = $product->id;
+            $orderProduct->price = $product->price;
+            $orderProduct->cart_amount = (Session::get('order')['final_amount'] - Session::get('discount')) + 0;
+            $orderProduct->total_amount = (Session::get('order')['final_amount'] - Session::get('discount')) + 0;
+            $orderProduct->qty = $data['qty'];
+            $orderProduct->order_status = 2;
+            $orderProduct->save();
+
+            $product->qty = $product->qty - $data['qty'];
+            $product->save();
+        }
+
+        Session::forget('cart');
+        Session::forget('discount');
+        Session::forget('CART_AMOUNT');
+        Session::forget('order');
+        Session::forget('voucher');
+        Session::forget('offer');
+        Session::forget('addressId');
+
+        Session::put('orderId', $orderId);
+        
+        return redirect(route('user.thanks'));
+    }
+
+    public function thanks(Request $request)
+    {
+        if(Session::get('orderId') == null) {
+            return redirect(route('user.index'));
+        }
+
+        $order = Order::with(['orderProducts'])->find(Session::get('orderId'));
+        $user = Auth::user();
+        $address = $user->addresses()->find($order->address_id);
+        
+        Mail::send('user.email.order-place', [
+            'order' => $order,
+            'user' => $user,
+            'address' => $address
+        ], function ($message) use ($user) {
+            $message->from('vipulpatel1152@gmail.com', 'Developer Mail')
+                ->subject('Order Placed')
+                ->to($user->email, $user->name);
+        });
+
+        Session::forget('orderId');
+
+        return view('user.thanks', [
+            'order' => $order,
+            'user' => $user,
+            'address' => $address,
         ]);
     }
 }

@@ -85,6 +85,12 @@
                     <li><a href="javascript:void(0);">Services</a></li>
                     <li><a href="{{ route('user.products') }}">Boxes</a></li>
                     <li><a href="javascript:void(0);">Contact</a></li>
+                    @if(!\Auth::check())
+                        <li><a href="{{ route('user.loginForm') }}">Login</a></li>
+                    @else
+                        <li><a href="{{ route('user.myAccount') }}">{{ \Auth::user()->first_name }}</a></li>
+                        <li><a href="{{ route('user.logout') }}">Logout</a></li>
+                    @endif
                 </ul>
             </div><!-- end of nav-collapse -->
 

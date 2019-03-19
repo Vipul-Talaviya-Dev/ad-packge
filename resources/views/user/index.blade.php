@@ -32,6 +32,7 @@
 </head>
 
 <body>
+    <span class="your-cart"></span>
 <!-- start page-wrapper -->
     <div class="page-wrapper">
         <!-- start preloader -->
@@ -105,13 +106,22 @@
                             <li><a href="javascript:void(0);">Services</a></li>
                             <li><a href="{{ route('user.products') }}">Boxes</a></li>
                             <li><a href="javascript:void(0);">Contact</a></li>
+                            @if(!\Auth::check())
+                                <li><a href="{{ route('user.loginForm') }}">Login</a></li>
+                            @else
+                                <li><a href="{{ route('user.myAccount') }}">{{ \Auth::user()->first_name }}</a></li>
+                            @endif
                         </ul>
                     </div><!-- end of nav-collapse -->
 
                     <div class="cart-contact">
                         <div class="mini-cart">
-                            <button class="cart-toggle-btn"> <i class="fi flaticon-shopping-cart"></i> Cart (2) </button>
-
+                            <a href="javascript:void(0);" class="" id="cart-list">
+                                <i class="fi flaticon-shopping-cart"></i>
+                                <div class="total">
+                                    <span id="backetItem" class="backetItem">{{ ((\Session::get('cart') =="") ? 0 : count(\Session::get('cart'))) }}</span>
+                                </div>
+                            </a>
                             <div class="top-cart-content">
                                 <div class="top-cart-title">
                                     <p>Shopping Cart</p>
@@ -1006,6 +1016,7 @@
 
     <!-- Custom script for this template -->
     <script src="/front/js/script.js"></script>
+    <script src="/front/js/custom-script.js"></script>
 
 </body>
 </html>

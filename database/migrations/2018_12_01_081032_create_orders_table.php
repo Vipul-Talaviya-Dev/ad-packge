@@ -17,7 +17,7 @@ class CreateOrdersTable extends Migration
             $table->increments('id');
             $table->unsignedInteger('user_id');
             $table->integer('address_id')->unsigned();
-            $table->unsignedInteger('product_id');
+            $table->unsignedInteger('product_id')->nullable();
             $table->unsignedInteger('price')->comment("In Paisa");
             $table->unsignedInteger('shipping_charge')->comment("In Paisa");
             $table->unsignedInteger('gst')->comment("In Paisa");

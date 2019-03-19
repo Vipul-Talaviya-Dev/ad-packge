@@ -213,7 +213,7 @@ $(document).ready(function() {
                 },
                 dataType: "json",
                 type: "POST",
-                data: {"name": fn+' '+ln, "email": d, "password": a, "mobile": c},
+                data: {"first_name": fn, "last_name": ln, "email": d, "password": a, "mobile": c},
                 success: function(res) {
                     hide_loader();
                     if(res.status == false) {

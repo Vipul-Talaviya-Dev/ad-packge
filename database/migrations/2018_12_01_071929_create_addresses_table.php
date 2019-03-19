@@ -15,13 +15,16 @@ class CreateAddressesTable extends Migration
     {
         Schema::create('addresses', function (Blueprint $table) {
             $table->increments('id');
-            $table->unsignedInteger('user_id');
+            $table->integer('user_id')->unsigned();
+            $table->string('name');
+            $table->string('mobile');
             $table->text('address');
-            $table->text('zipcode');
+            $table->text('address_1')->nullable();
+            $table->string('pincode');
             $table->string('city');
             $table->string('state');
             $table->string('country');
-            $table->unsignedTinyInteger('default')->comment('User Selected Address');
+            $table->tinyInteger('default')->comment('Default')->default(0);
             $table->timestamps();
             $table->softDeletes();
             $table->foreign('user_id')->references('id')->on('users');

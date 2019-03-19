@@ -10,7 +10,7 @@ class Address extends Model
     use SoftDeletes;
 
     protected $fillable = [
-    	'user_id', 'address', 'city', 'state', 'country', 'zipcode', 'default'
+    	'user_id', 'name', 'mobile', 'address', 'address_1', 'pincode', 'city', 'state', 'country', 'default'
     ];
 
     protected $dates = [

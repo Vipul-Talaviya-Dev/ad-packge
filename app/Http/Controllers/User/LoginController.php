@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers\User;
 
+use Auth;
 use Session;
-use App\Models\Product;
+use Validator;
+use App\Models\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -41,7 +43,8 @@ class LoginController extends Controller
     public function signUpCheck(Request $request)
     {
         $rules = array(
-            'name' => 'required',
+            'first_name' => 'required',
+            'last_name' => 'required',
             'mobile' => 'required|numeric|min:10',
             'email' => 'required|email|unique:users,email',
             'password' => 'required',
@@ -60,7 +63,8 @@ class LoginController extends Controller
         } else {
             $otp = mt_rand(1111, 9999);
             $user = [
-                'name' => $request->get('name'),
+                'first_name' => $request->get('first_name'),
+                'last_name' => $request->get('last_name'),
                 'email' => $request->get('email'),
                 'mobile' => $request->get('mobile'),
                 'password' => $request->get('password'),
@@ -103,10 +107,12 @@ class LoginController extends Controller
                 'error' => "Invalid Otp",
             ]);
         }
+
         $user = User::create([
-            'name' => Session::get('user')['name'],
+            'first_name' => Session::get('user')['first_name'],
+            'last_name' => Session::get('user')['last_name'],
             'email' => Session::get('user')['email'],
-            // 'mobile' => Session::get('user')['mobile'],
+            'mobile' => Session::get('user')['mobile'],
             'password' => \Hash::make(Session::get('user')['password']),
             'referral_code' => User::referralCode(),
         ]);

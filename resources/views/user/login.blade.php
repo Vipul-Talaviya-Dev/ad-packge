@@ -45,7 +45,7 @@
 					</div>
 				</div>
 				<div class="tab-pane fade" id="nav-register" role="tabpanel" aria-labelledby="nav-register-tab">
-					<div class="registrationCheck">
+					<div id="registrationCheck">
 						<p></p>
 						<div class="row">
 							<div class="col col-sm-6">

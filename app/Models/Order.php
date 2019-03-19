@@ -18,4 +18,19 @@ class Order extends Model
         'updated_at',
         'deleted_at'
     ];
+
+    public function orderId()
+	{
+		return 'ADPACKING'.date('Ymd', strtotime($this->created_at)).$this->id;
+	}
+
+	public function orderProducts()
+	{
+		return $this->hasMany(OrderProduct::class);
+	}
+
+	public function user()
+	{
+		return $this->belongsTo(User::class);
+	}
 }

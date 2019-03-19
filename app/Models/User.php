@@ -17,7 +17,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'fist_name', 'last_name', 'email', 'mobile', 'password', 'referral_code', 'status'
+        'first_name', 'last_name', 'email', 'mobile', 'password', 'referral_code', 'status'
     ];
 
     /**
@@ -57,5 +57,15 @@ class User extends Authenticatable
     public function scopeInActive($query)
     {
         return $query->where('users.status', self::INACTIVE);   
+    }
+
+    public function address()
+    {
+        return $this->hasOne(Address::class);
+    }
+
+    public function addresses()
+    {
+        return $this->hasMany(Address::class);
     }
 }
