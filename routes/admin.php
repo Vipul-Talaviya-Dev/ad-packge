@@ -53,6 +53,7 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'control-panel','as' => 'admin
 
         // Contact
         Route::get('contacts', 'DashboardController@contacts')->name('contacts');
+        Route::get('inquiries', 'DashboardController@inquiries')->name('inquiries');
 
         // CMS
         Route::get('cms/list', 'CmsController@index')->name('cms');

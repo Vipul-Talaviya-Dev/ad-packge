@@ -4,20 +4,22 @@
 <meta name="csrf-token" content="{{ csrf_token() }}">
 @endsection
 
+@section('css')
+<style type="text/css">
+    .offer-pic {
+        padding: 0px 0 0 135px !important;
+    }
+    .offer-pic:after {
+        border: none; 
+    }
+</style>
+@endsection
+
 @section('title', 'About Us')
 
 @section('page-title')
 <section class="page-title">
     <div class="container">
-        <div class="row">
-            <div class="col col-xs-12">
-                <h2>About us</h2>
-                <ol class="breadcrumb">
-                    <li><a href="/">Home</a></li>
-                    <li>About us</li>
-                </ol>
-            </div>
-        </div> <!-- end row -->
     </div> <!-- end container -->
 </section>        
 @endsection
@@ -32,15 +34,13 @@
                             <h2>Get full range of premium Industrial services for your business</h2>
                         </div>                        
                         <div class="offer-text">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisc ing elit, sed do eiusmod tempor inci didunt ut labore et dolore magna.</p>
-                            <p>Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur</p>
-                            <a href="#" class="theme-btn read-more">Read More</a>
-                            <a href="#" class="theme-btn-s2 read-more">Company history</a>
+                            <p>DAM Packs is, India based company engaged in design, printing, manufacturing & distributing wide range of packaging materials such as corrugated boxes, BOPP tapes, Bubble Wraps, Courier Bags, Strech Film, etc. We provide package design solutions to a wide array of industry and end user applications.</p>
+                            <p>Our packaging and shipping supplies are manufactured with high-quality materials that can protect your contents in a safe way.</p>
                         </div>
                     </div>
                     <div class="col col-md-7">
                         <div class="offer-pic">
-                            <img src="/front/images/offer-pic.jpg" alt>
+                            <img src="/front/images/offer-pic.png" class="img-responsive" style="background-color: #7dc3f6;">
                         </div>
                     </div>
                 </div> <!-- end row -->
@@ -55,7 +55,6 @@
                 <div class="row">
                     <div class="col col-xs-12">
                         <h2>Our one and only priority is the <span>customer satisfaction</span></h2>
-                        <a href="#" class="theme-btn-s5">Get a quote</a>
                     </div>
                 </div>
             </div> <!-- end container -->
@@ -70,7 +69,7 @@
                     <div class="col col-md-3">
                         <div class="features-title">
                             <h2>Why we are best</h2>
-                            <p>Lorem ipsum dolor sit amet, consectetur adi piscing elit, sed do eiusmod tempor.</p>
+                            <p>Our customers are at the heart of our organization.</p>
                         </div>
                     </div>
                     <div class="col col-md-3 col-sm-4">
@@ -80,8 +79,7 @@
                             </div>
                             <div class="details">
                                 <h3>Expert Engineers</h3>
-                                <p>Sed quia non numquam eius modi tempo ra incidunt ut labore et dolore magnam aliq uam quaera.</p>
-                                <a href="#" class="more">Details <i class="fa fa-angle-right"></i></a>
+                                <p>Our engineers are expert in quality and service.</p>
                             </div>
                         </div>
                     </div>
@@ -92,8 +90,7 @@
                             </div>
                             <div class="details">
                                 <h3>Customer Support</h3>
-                                <p>Sed quia non numquam eius modi tempo ra incidunt ut labore et dolore magnam aliq uam quaera.</p>
-                                <a href="#" class="more">Details <i class="fa fa-angle-right"></i></a>
+                                <p>Feel free to drop in an email on support@dampacks.com, you would definitely hear back from us.</p>
                             </div>
                         </div>
                     </div>
@@ -104,8 +101,7 @@
                             </div>
                             <div class="details">
                                 <h3>Delivery On time</h3>
-                                <p>Sed quia non numquam eius modi tempo ra incidunt ut labore et dolore magnam aliq uam quaera.</p>
-                                <a href="#" class="more">Details <i class="fa fa-angle-right"></i></a>
+                                <p>We offer quick load and delivery dates, guaranteed to get it there fast.</p>
                             </div>
                         </div>
                     </div>

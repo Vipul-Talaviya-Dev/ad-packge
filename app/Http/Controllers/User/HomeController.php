@@ -4,7 +4,9 @@ namespace App\Http\Controllers\User;
 
 use App\Models\Cms;
 use App\Models\Banner;
+use App\Models\Inquiry;
 use App\Models\Contact;
+use App\Models\Product;
 use App\Models\AppContent;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -15,7 +17,8 @@ class HomeController extends Controller
     {
     	return view('user.index', [
     		'appContent' => AppContent::find(1),
-            'banners' => Banner::active()->get()
+            'banners' => Banner::active()->get(),
+            'products' => Product::latest()->limit(10)->get()
     	]);
     }
 
@@ -48,6 +51,25 @@ class HomeController extends Controller
         ]);
 
         return redirect()->back()->with('success', 'Thanks you for contact us.');  
+    }
+
+    public function inquiry(Request $request)
+    {
+        $this->validate($request, [
+            'name' => 'required',
+            'email' => 'required|email',
+            'phone' => 'required|numeric',
+            'business_type' => 'required',
+        ]);
+
+        Inquiry::create([
+            'name' => $request->get('name'),
+            'email' => $request->get('email'),
+            'mobile' => $request->get('phone'),
+            'business_type' => $request->get('business_type'),
+        ]);
+
+        return redirect()->back()->with('success', 'Thank you for enquiry our sales executive contact you.');  
     }
 
     public function faq()

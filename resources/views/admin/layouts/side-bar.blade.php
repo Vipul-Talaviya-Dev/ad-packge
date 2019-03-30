@@ -36,6 +36,7 @@
                             <li><a href="{{ route('admin.appContent') }}"><i class="icon-stack3"></i> App Content</a></li>
                             <li><a href="{{ route('admin.banners') }}"><i class="icon-stack3"></i> Banner</a></li>
                             <li><a href="{{ route('admin.contacts') }}"><i class="icon-stack3"></i> Contacts</a></li>
+                            <li><a href="{{ route('admin.inquiries') }}"><i class="icon-stack3"></i> Inquiries</a></li>
                             <li><a href="{{ route('admin.cms') }}"><i class="icon-stack3"></i> CMS</a></li>
                         </ul>
                     </li>

@@ -5,7 +5,7 @@
             <div class="row">
                 <div class="col col-md-3 col-sm-6">
                     <div class="widget about-widget">
-                        <div class="footer-logo"><img src="/front/images/logo.jpg" alt></div>
+                        <div class="footer-logo"><img src="/front/images/logo.png" class="img-responsive"></div>
                         <ul class="contact-info">
                             <li><i class="fa fa-home"></i> {{ $appContent->address }}</li>
                             <li><i class="fa fa-phone"></i> {{ $appContent->support_mobile }}</li>
@@ -36,11 +36,6 @@
                             <li><a href="{{ route('user.faq') }}">FAQ</a></li>
                             <li><a href="{{ route('user.termsCondition') }}">Terms &amp; Conditions</a></li>
                         </ul>
-                        <ul>
-                            <li><a href="javascript:void(0);">Gallery</a></li>
-                            <li><a href="javascript:void(0);">Contact Us</a></li>
-                            <li><a href="javascript:void(0);">Privacy Policy</a></li>
-                        </ul>
                     </div>
                 </div>
 
@@ -50,20 +45,20 @@
                         <ul>
                             <li>
                                 <div class="text">
-                                    <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit. Ed quia con sequuntur magni dolores.</p>
+                                    <p>We don't want to push our ideas on to customers, we simply want to make what they want.</p>
                                 </div>
                                 <div class="info-box">
                                     <i class="fa fa-twitter"></i>
-                                    <strong><a href="javascript:void(0);">@Mark Wahlberg</a></strong>
+                                    <strong><a href="javascript:void(0);">@Laura Ashley</a></strong>
                                 </div>
                             </li>
                             <li>
                                 <div class="text">
-                                    <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit. Ed quia con sequuntur magni dolores.</p>
+                                    <p>A brand for a company is like a reputation for a person. You earn reputation by trying to do hard things well.</p>
                                 </div>
                                 <div class="info-box">
                                     <i class="fa fa-twitter"></i>
-                                    <strong><a href="javascript:void(0);">@Mark Wahlberg</a></strong>
+                                    <strong><a href="javascript:void(0);">@Jeff Bezos</a></strong>
                                 </div>
                             </li>
                         </ul>

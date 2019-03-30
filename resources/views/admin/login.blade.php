@@ -7,6 +7,7 @@
     <title>Admin Login panel</title>
 
     <!-- Global stylesheets -->
+    <link rel="shortcut icon" type="image/png" href="/front/images/favicon.png"/>
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,300,100,500,700,900" rel="stylesheet"
           type="text/css">
     <link href="/assets/css/icons/icomoon/styles.css" rel="stylesheet" type="text/css">
@@ -35,9 +36,9 @@
 <body class="login-container">
 
 <!-- Main navbar -->
-<div class="navbar navbar-inverse">
+<!-- <div class="navbar navbar-inverse">
     <div class="navbar-header">
-        <a class="navbar-brand" href="{{ route('admin.login') }}"><img src="/assets/images/logo_light.png" alt=""></a>
+        <a class="navbar-brand" href="{{ route('admin.login') }}"><img src="/front/images/logo.jpg" alt=""></a>
 
         <ul class="nav navbar-nav pull-right visible-xs-block">
             <li><a data-toggle="collapse" data-target="#navbar-mobile"><i class="icon-tree5"></i></a></li>
@@ -48,8 +49,7 @@
         <ul class="nav navbar-nav navbar-right">
             <li>
                 <a href="#">
-                    <i class="icon-display4"></i> <span
-                            class="visible-xs-inline-block position-right"> Go to website</span>
+                    <i class="icon-display4"></i> <span class="visible-xs-inline-block position-right"> Go to website</span>
                 </a>
             </li>
 
@@ -68,7 +68,10 @@
             </li>
         </ul>
     </div>
-</div>
+</div> -->
+<p><br></p>
+<p><br></p>
+<p><br></p>
 <!-- /main navbar -->
 
 
@@ -89,7 +92,7 @@
                     {{ csrf_field() }}
                     <div class="panel panel-body login-form">
                         <div class="text-center">
-                            <div class="icon-object border-slate-300 text-slate-300"><i class="icon-reading"></i></div>
+                            <div class=""><img src="/front/images/logo.png" class="img-responsive"></div>
                             <h5 class="content-group">Login to your account
                                 <small class="display-block">Enter your credentials below</small>
                             </h5>
@@ -121,10 +124,6 @@
                         <div class="form-group">
                             <button type="submit" class="btn btn-primary btn-block">Sign in <i
                                         class="icon-circle-right2 position-right"></i></button>
-                        </div>
-
-                        <div class="text-center">
-                            <a href="login_password_recover.html">Forgot password?</a>
                         </div>
                     </div>
                 </form>

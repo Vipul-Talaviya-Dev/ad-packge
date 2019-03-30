@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use Carbon\Carbon;
 use App\Models\User;
+use App\Models\Inquiry;
 use App\Models\Contact;
 use App\Models\AppContent;
 use Illuminate\Http\Request;
@@ -67,6 +68,15 @@ class DashboardController extends Controller
 
         return view('admin.contact.index', [
             'contacts' => $contacts->paginate(15)
+        ]);
+    }
+
+    public function inquiries(Request $request)
+    {
+        $inquiries = Inquiry::latest();
+
+        return view('admin.inquiry.index', [
+            'inquiries' => $inquiries->paginate(15)
         ]);
     }
 }

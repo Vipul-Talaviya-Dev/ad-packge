@@ -4,6 +4,14 @@
 <meta name="csrf-token" content="{{ csrf_token() }}">
 @endsection
 
+@section('css')
+<style type="text/css">
+    .page-title {
+        background: url('/front/images/contact-us.jpg') center center/cover no-repeat local;
+    }
+</style>
+@endsection
+
 @section('title', 'Contact Us')
 
 @section('page-title')

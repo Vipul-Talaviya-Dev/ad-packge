@@ -9,6 +9,7 @@
     <title>On line Packing</title>
     
     <!-- Icon fonts -->
+    <link rel="shortcut icon" type="image/png" href="/front/images/favicon.png"/>
     <link href="/front/css/font-awesome.min.css" rel="stylesheet">
     <link href="/front/css/flaticon.css" rel="stylesheet">
     <link href="/front/css/bootstrap.min.css" rel="stylesheet" />
@@ -23,6 +24,7 @@
     <link href="/front/css/jquery.mCustomScrollbar.min.css" rel="stylesheet">
     <!-- Custom styles for this template -->
     <link href="/front/css/style.css" rel="stylesheet">
+    <link href="/front/css/toast.css" rel="stylesheet" type="text/css" media="all" />
     <link href="/front/css/color-style.css" rel="stylesheet" title="switchstyle">
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -56,7 +58,7 @@
                                                 $address = explode(',', $appContent->address);
                                             ?>
                                             <p>{{ $address[0] }}</p>
-                                            <span>{{ ($address[1]) ? $address[1] : '' }}</span>
+                                            <span>{{ isset($address[1]) ? $address[1] : '' }}</span>
                                         </div>
                                     </div>
                                     <div>
@@ -80,7 +82,7 @@
                                 </ul>
                             </div>
                             <div class="get-quote">
-                                <a href="javascript:void(0);" class="theme-btn">Inquiry</a>
+                                <a href="javascript:void(0);" id="" class="theme-btn inquiry">Inquiry</a>
                             </div>
                         </div>
                     </div>
@@ -97,7 +99,7 @@
                             <span class="icon-bar"></span>
                         </button>
                         <div class="site-logo">
-                            <a href="javascript:void(0);"><img src="/front/images/logo.jpg" alt></a>
+                            <a href="javascript:void(0);"><img src="/front/images/logo.png" class="img-responsive"></a>
                         </div>
                     </div>
                     <div id="navbar" class="navbar-collapse collapse navbar-right navigation-holder">
@@ -195,8 +197,6 @@
                         <div class="offer-text">
                             <p>Lorem ipsum dolor sit amet, consectetur adipisc ing elit, sed do eiusmod tempor inci didunt ut labore et dolore magna.</p>
                             <p>Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur</p>
-                            <a href="javascript:void(0);" class="theme-btn read-more">Read More</a>
-                            <a href="javascript:void(0);" class="theme-btn-s2 read-more">Company history</a>
                         </div>
                     </div>
                     <div class="col col-md-7">
@@ -208,7 +208,6 @@
                                     </div>
                                     <h3>Latest Technology</h3>
                                     <p>Sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.</p>
-                                    <a href="javascript:void(0);" class="offer-details">Details <i class="fa fa-angle-right"></i></a>
                                 </div>
                             </div>
                             <div class="grid">
@@ -218,7 +217,6 @@
                                     </div>
                                     <h3>Expert Engineers</h3>
                                     <p>Sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.</p>
-                                    <a href="javascript:void(0);" class="offer-details">Details <i class="fa fa-angle-right"></i></a>
                                 </div>
                             </div>
                             <div class="grid">
@@ -228,7 +226,6 @@
                                     </div>
                                     <h3>Customer Support</h3>
                                     <p>Sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.</p>
-                                    <a href="javascript:void(0);" class="offer-details">Details <i class="fa fa-angle-right"></i></a>
                                 </div>
                             </div>
                             <div class="grid">
@@ -238,7 +235,6 @@
                                     </div>
                                     <h3>Delivery On time</h3>
                                     <p>Sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.</p>
-                                    <a href="javascript:void(0);" class="offer-details">Details <i class="fa fa-angle-right"></i></a>
                                 </div>
                             </div>
                         </div>
@@ -255,78 +251,47 @@
                 <div class="row">
                     <div class="col col-xs-12">
                         <h2>Our one and only priority is the <span>customer satisfaction</span></h2>
-                        <a href="javascript:void(0);" class="theme-btn-s5">Get a quote</a>
+                        <a href="javascript:void(0);" class="theme-btn-s5 inquiry">Get a quote</a>
                     </div>
                 </div>
             </div> <!-- end container -->
         </section>
         <!-- end cta -->
 
-        <!-- start offer -->
-        <section class="section-padding">
+        <!-- start services-s3 -->
+        <section class="services-s3 section-padding">
             <div class="container">
                 <div class="row">
-                    <div class="col col-md-5">
-                        <div class="section-title-s3">
-                            <h2>Get full range of premium Industrial services for your business</h2>
-                        </div>                        
-                        <div class="offer-text">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisc ing elit, sed do eiusmod tempor inci didunt ut labore et dolore magna.</p>
-                            <p>Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur</p>
-                            <a href="javascript:void(0);" class="theme-btn read-more">Read More</a>
-                            <a href="javascript:void(0);" class="theme-btn-s2 read-more">Company history</a>
-                        </div>
-                    </div>
-                    <div class="col col-md-7">
-                        <div class="offer-grids">
-                            <div class="grid">
-                                <div class="details">
-                                    <div class="icon">
-                                        <i class="fi flaticon-construction"></i> 
-                                    </div>
-                                    <h3>Latest Technology</h3>
-                                    <p>Sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.</p>
-                                    <a href="javascript:void(0);" class="offer-details">Details <i class="fa fa-angle-right"></i></a>
-                                </div>
-                            </div>
-                            <div class="grid">
-                                <div class="details">
-                                    <div class="icon">
-                                        <i class="fi flaticon-people"></i> 
-                                    </div>
-                                    <h3>Expert Engineers</h3>
-                                    <p>Sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.</p>
-                                    <a href="javascript:void(0);" class="offer-details">Details <i class="fa fa-angle-right"></i></a>
-                                </div>
-                            </div>
-                            <div class="grid">
-                                <div class="details">
-                                    <div class="icon">
-                                        <i class="fi flaticon-support"></i> 
-                                    </div>
-                                    <h3>Customer Support</h3>
-                                    <p>Sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.</p>
-                                    <a href="javascript:void(0);" class="offer-details">Details <i class="fa fa-angle-right"></i></a>
-                                </div>
-                            </div>
-                            <div class="grid">
-                                <div class="details">
-                                    <div class="icon">
-                                        <i class="fi flaticon-time-passing"></i> 
-                                    </div>
-                                    <h3>Delivery On time</h3>
-                                    <p>Sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.</p>
-                                    <a href="javascript:void(0);" class="offer-details">Details <i class="fa fa-angle-right"></i></a>
-                                </div>
-                            </div>
+                    <div class="col col-md-8 col-md-offset-2">
+                        <div class="section-title-s6">
+                            <h2>Our Products</h2>
                         </div>
                     </div>
                 </div> <!-- end row -->
+                <div class="row">
+                    <div class="col col-xs-12">
+                        <div class="services-s3-grids">
+                            @foreach($products as $product)
+                            <div class="grid">
+                                <div class="inner">
+                                    <div class="img-holder">
+                                        <img src="{{ \Cloudder::secureShow($product->image, []) }}" alt="{{ $product->name }}">
+                                    </div>
+                                    <div class="details">
+                                        <h3><a href="{{ route('user.product.detail', ['productSlug' => $product->slug]) }}">{{ substr($product->name, 0, 30).'...' }}</a></h3>
+                                    </div>
+                                </div>
+                            </div>
+                            @endforeach
+                        </div>
+                    </div>
+                </div>
             </div> <!-- end container -->
         </section>
-        <!-- end offer -->
+        <!-- end services-s3 -->
+
         <!-- start contact-section -->
-        <section class="contact-section section-padding parallax" data-bg-image="/front/images/contact-section-bg.jpg">
+        <section id="contact-section" class="contact-section section-padding parallax" data-bg-image="/front/images/contact-section-bg.jpg">
             <div class="container">
                 <div class="row">
                     <div class="col col-md-4 col-md-offset-1 col-md-5">
@@ -337,9 +302,9 @@
                             <div class="details">
                                 <p>For any kind of query, contact us with the details below.</p>
                                 <ul>
-                                    <li><i class="fa fa-phone"></i> +123 (569) 254 78</li>
-                                    <li><i class="fa fa-envelope"></i> info@industrial.com</li>
-                                    <li><i class="fa fa-home"></i> #59, East Madison Ave, Melbourne Australia</li>
+                                    <li><i class="fa fa-phone"></i> {{ $appContent->support_mobile }}</li>
+                                    <li><i class="fa fa-envelope"></i> {{ $appContent->support_email }}</li>
+                                    <li><i class="fa fa-home"></i> {{ $appContent->address }}</li>
                                 </ul>
                             </div>
                         </div>
@@ -349,30 +314,26 @@
                         <div class="section-title-white">
                             <h2>Request a quote</h2>
                         </div>   
-                        <p>Lorem ipsum dolor sit amet, consectetur adipi scing elit, sed do eiusmod tempor incidi dunt ut labore et dolore magna aliqua.</p>
+                        <p>Thanks for your interest. Please fill out the request form below and one of our box & packaging specialists will contact you back within 48 hours.</p>
 
                         <div class="contact-form-s1 form">
-                            <form method="post" id="contact-form" class="wpcf7-form contact-validation-active">
+                            <form method="post" id="contact-form" class="wpcf7-form contact-validation-active" method="post" action="{{ route('user.inquiry') }}">
+                                {{ csrf_field() }}
                                 <div>
                                     <label for="name">Full Name</label>
-                                    <input type="text" id="name" name="name">
+                                    <input type="text" id="name" name="name" autocomplete="off">
                                 </div>
                                 <div>
                                     <label for="email">Email</label>
-                                    <input type="email" id="email" name="email">
+                                    <input type="email" id="email" name="email" autocomplete="off">
                                 </div>
                                 <div>
                                     <label for="phone">Phone Number</label>
-                                    <input type="text" id="phone" name="phone">
+                                    <input type="text" id="phone" name="phone" autocomplete="off">
                                 </div>
                                 <div>
                                     <label>Business Type</label>
-                                    <select name="select">
-                                        <option selected disabled> -- Select One -- </option>
-                                        <option value="Select One">Select One</option>
-                                        <option value="Select Two">Select Two</option>
-                                        <option value="Select Three">Select Three</option>
-                                    </select>
+                                    <input type="text" id="business_type" name="business_type" autocomplete="off">
                                 </div>
                                 <div class="submit-btn-wrap">
                                     <input value="Submit" class="theme-btn wpcf7-submit" type="submit">
@@ -402,7 +363,7 @@
             <div class="row">
                 <div class="col col-md-3 col-sm-6">
                     <div class="widget about-widget">
-                        <div class="footer-logo"><img src="/front/images/logo.jpg" alt></div>
+                        <div class="footer-logo"><img src="/front/images/logo.png" alt class="img-responsive"></div>
                         <ul class="contact-info">
                             <li><i class="fa fa-home"></i> {{ $appContent->address }}</li>
                             <li><i class="fa fa-phone"></i> {{ $appContent->support_mobile }}</li>
@@ -433,11 +394,6 @@
                             <li><a href="{{ route('user.faq') }}">FAQ</a></li>
                             <li><a href="{{ route('user.termsCondition') }}">Terms &amp; Conditions</a></li>
                         </ul>
-                        <ul>
-                            <li><a href="javascript:void(0);">Gallery</a></li>
-                            <li><a href="javascript:void(0);">Contact Us</a></li>
-                            <li><a href="javascript:void(0);">Privacy Policy</a></li>
-                        </ul>
                     </div>
                 </div>
 
@@ -447,20 +403,20 @@
                         <ul>
                             <li>
                                 <div class="text">
-                                    <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit. Ed quia con sequuntur magni dolores.</p>
+                                    <p>We don't want to push our ideas on to customers, we simply want to make what they want.</p>
                                 </div>
                                 <div class="info-box">
                                     <i class="fa fa-twitter"></i>
-                                    <strong><a href="javascript:void(0);">@Mark Wahlberg</a></strong>
+                                    <strong><a href="javascript:void(0);">@Laura Ashley</a></strong>
                                 </div>
                             </li>
                             <li>
                                 <div class="text">
-                                    <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit. Ed quia con sequuntur magni dolores.</p>
+                                    <p>A brand for a company is like a reputation for a person. You earn reputation by trying to do hard things well.</p>
                                 </div>
                                 <div class="info-box">
                                     <i class="fa fa-twitter"></i>
-                                    <strong><a href="javascript:void(0);">@Mark Wahlberg</a></strong>
+                                    <strong><a href="javascript:void(0);">@Jeff Bezos</a></strong>
                                 </div>
                             </li>
                         </ul>
@@ -484,10 +440,27 @@
     <!-- Plugins for this template -->
     <script src="/front/js/jquery-plugin-collection.js"></script>
     <script src="/front/js/jquery.mCustomScrollbar.js"></script>
+    <script src="/front/js/toast.js" type="text/javascript"></script>
 
     <!-- Custom script for this template -->
     <script src="/front/js/script.js"></script>
     <script src="/front/js/custom-script.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $("body").on("click", ".inquiry", function() {
+                $('html, body').animate({
+                    scrollTop: $("#contact-section").offset().top
+                }, 2000);
+            });
 
+             @if(\Session::get('error'))
+                toastr.warning("{{ \Session::get('error') }}");
+            @endif
+
+            @if(\Session::get('success'))
+                toastr.success("{{ \Session::get('success') }}");
+            @endif
+        });
+    </script>
 </body>
 </html>

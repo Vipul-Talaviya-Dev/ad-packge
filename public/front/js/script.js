@@ -759,42 +759,23 @@
                     required: true,
                     minlength: 2
                 },
-
                 email: "required",
-
-                phone: "required",
-
-                select: "required",
+                phone: {
+                    required: true,
+                    digits: true
+                },
+                business_type: "required",
             },
 
             messages: {
                 name: "Please enter your name",
                 email: "Please enter your email",
                 phone: "Please enter your phone",
-                select: "Select an item"
+                business_type: "Please enter your "
             },
 
             submitHandler: function (form) {
-                $.ajax({
-                    type: "POST",
-                    url: "mail.php",
-                    data: $(form).serialize(),
-                    success: function () {
-                        $( "#loader").hide();
-                        $( "#success").slideDown( "slow" );
-                        setTimeout(function() {
-                        $( "#success").slideUp( "slow" );
-                        }, 3000);
-                        form.reset();
-                    },
-                    error: function() {
-                        $( "#loader").hide();
-                        $( "#error").slideDown( "slow" );
-                        setTimeout(function() {
-                        $( "#error").slideUp( "slow" );
-                        }, 3000);
-                    }
-                });
+                form.submit();
                 return false; // required to block normal submit since you used ajax
             }
 

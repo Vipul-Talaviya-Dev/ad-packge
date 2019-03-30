@@ -12,7 +12,7 @@
                                     $address = explode(',', $appContent->address);
                                     ?>
                                     <p>{{ $address[0] }}</p>
-                                    <span>{{ ($address[1]) ? $address[1] : '' }}</span>
+                                    <span>{{ isset($address[1]) ? $address[1] : '' }}</span>
                                 </div>
                             </div>
                             <div>
@@ -45,7 +45,7 @@
             <div class="row">
                 <div class="col col-sm-3">
                     <div class="site-logo">
-                        <a href="/"><img src="/front/images/logo.jpg" alt></a>
+                        <a href="/"><img src="/front/images/logo.png" class="img-responsive"></a>
                     </div>
                 </div>
                 @if(false)
@@ -110,7 +110,7 @@
                 </div>
             </div>
 
-            <a href="javascript:void(0);" class="theme-btn-s2 request-quote">Request Quote</a>
+            <a href="{{ route('user.index') }}#contact-section" class="theme-btn-s2 request-quote">Request Quote</a>
         </div><!-- end of container -->
     </nav> <!-- end navigation -->
 </header>

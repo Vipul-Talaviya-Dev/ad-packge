@@ -15,6 +15,7 @@ $appContent = \App\Models\AppContent::find(1);
     <title>@yield('title') | Ad Packing</title>
     
     <!-- Icon fonts -->
+    <link rel="shortcut icon" type="image/png" href="/front/images/favicon.png"/>
     <link href="/front/css/font-awesome.min.css" rel="stylesheet">
     <link href="/front/css/flaticon.css" rel="stylesheet">
     <link href="/front/css/bootstrap.min.css" rel="stylesheet" />

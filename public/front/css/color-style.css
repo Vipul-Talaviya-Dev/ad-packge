@@ -638,7 +638,7 @@ img {
 ******************************/
 .page-title {
   background: url("../images/page-title.jpg") center center/cover no-repeat local;
-  height: 260px;
+  height: 320px;
   position: relative;
   width: 100%;
 }

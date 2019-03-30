@@ -16,6 +16,7 @@ Route::group(['namespace' => 'User', 'as' => 'user.'], function () {
     Route::get('about-us', 'HomeController@aboutUs')->name('aboutUs');
     Route::get('contact-us', 'HomeController@contactUs')->name('contactUs');
     Route::post('contact-us', 'HomeController@contactAdd')->name('contactAdd');
+    Route::post('inquiry', 'HomeController@inquiry')->name('inquiry');
     Route::get('faq', 'HomeController@faq')->name('faq');
     Route::get('terms-condition', 'HomeController@termsCondition')->name('termsCondition');
     Route::get('boxes', 'ProductController@index')->name('products');
