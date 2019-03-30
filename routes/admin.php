@@ -8,6 +8,9 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'control-panel','as' => 'admin
     Route::group(['middleware' => 'adminAuth'], function () {
         // Dashboard Controller
         Route::get('dashboard', 'DashboardController@index')->name('dashboard');
+        Route::get('app-content', 'DashboardController@appContent')->name('appContent');
+        Route::post('app-content', 'DashboardController@appContentUpdate')->name('appContentUpdate');
+
         // Category Controller
         Route::get('categories', 'CategoryController@index')->name('categories');
         Route::get('category/add', 'CategoryController@add')->name('category.add');
@@ -38,6 +41,23 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'control-panel','as' => 'admin
         Route::post('product/insert', 'ProductController@insert')->name('product.insert');
         Route::get('product/{id}/edit', 'ProductController@edit')->name('product.edit');
         Route::post('product/{id}/update', 'ProductController@update')->name('product.update');
+
+        // Users
+        Route::get('users', 'DashboardController@users')->name('users');
+
+         // Order Controller
+        Route::get('orders', 'OrderController@index')->name('orders');
+        Route::get('order/{id}/detail', 'OrderController@orderDetail')->name('orderDetail');
+        Route::post('order/{id}/statusChange', 'OrderController@statusChange')->name('statusChange');
+        Route::get('order/{id}/invoice', 'OrderController@invoice')->name('invoice');
+
+        // Contact
+        Route::get('contacts', 'DashboardController@contacts')->name('contacts');
+
+        // CMS
+        Route::get('cms/list', 'CmsController@index')->name('cms');
+        Route::get('cms/{id}/edit', 'CmsController@edit')->name('cms.edit');
+        Route::post('cms/{id}/update', 'CmsController@update')->name('cms.update');
 
     });
 });

@@ -11,7 +11,7 @@
 	<tr>
 		<td width="100%">
 			<a href="javascript:void(0);">
-				<img src="" style="width: 20%;" alt="Online fashion store" align="center" title="Ad Packing" class="CToWUd">
+				<img src="{{ URL::asset('front/images/logo.jpg') }}" style="width: 20%;" alt="Ad Packing" align="center" title="Ad Packing" class="CToWUd">
 			</a>
 		</td>
     </tr>

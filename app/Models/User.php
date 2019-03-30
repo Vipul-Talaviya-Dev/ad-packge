@@ -35,6 +35,11 @@ class User extends Authenticatable
         'deleted_at'
     ];
     
+    public function fullName()
+    {
+        return $this->first_name.' '.$this->last_name;
+    }
+
     /**
      * @return string
      * Referral Function

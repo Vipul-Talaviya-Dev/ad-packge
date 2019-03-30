@@ -21,9 +21,7 @@ class CreateOrderProductsTable extends Migration
             $table->unsignedInteger('product_id');
             $table->unsignedInteger('price')->comment("In Paisa");
             $table->unsignedInteger('qty');
-            $table->unsignedInteger('total_amount')->comment("In Paisa");
-            $table->unsignedInteger('cart_amount')->comment("In Paisa, Payable Amount");
-            $table->unsignedTinyInteger('order_status')->comment('0: checkout, 1: Pending, 2: Success, 3: Cancel');
+            $table->unsignedTinyInteger('order_status')->comment('1: Order Checkout, 2: Order Placed, 3: Order Success, 4: Delivery Boy Pickup Order, 5: Delivery Boy To Customer, 6: Delivered, 7: Return, 8: Canceled')->default(1);
             $table->timestamps();
             $table->softDeletes();
             $table->foreign('order_id')->references('id')->on('orders');

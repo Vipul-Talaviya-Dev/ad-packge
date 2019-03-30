@@ -68,7 +68,7 @@ class RouteServiceProvider extends ServiceProvider
      */
     protected function mapAdminRoutes()
     {
-        \Auth::shouldUse('admin');
+        // \Auth::shouldUse('admin');
         Route::middleware('web')
             ->namespace($this->namespace)
             ->group(base_path('routes/admin.php'));
@@ -84,7 +84,7 @@ class RouteServiceProvider extends ServiceProvider
      */
     protected function mapUserRoutes()
     {
-        \Auth::shouldUse('user');
+        // \Auth::shouldUse('user');
         Route::middleware('web')
             ->namespace($this->namespace)
             ->group(base_path('routes/user.php'));

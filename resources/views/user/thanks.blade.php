@@ -16,7 +16,7 @@
     <div class="container">
         <div class="row">
             <div class="booking-information travelo-box">
-                            @if($order->order_status == 2)
+                            @if($order->order_status == 3)
                                 <div class="booking-confirmation clearfix">
                                     <i class="soap-icon-recommend icon circle animated bounceInDown"></i>
                                     <div class="message">

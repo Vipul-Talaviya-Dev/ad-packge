@@ -27,7 +27,7 @@ class BannerController extends Controller
         $this->validate($request, [
             'name' => 'required',
             'url' => 'required|url',
-            'image' => 'required|image',
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|dimensions:min_width=1920,min_height=850',
             'status' => 'required|numeric',
         ]);
 
@@ -63,6 +63,7 @@ class BannerController extends Controller
             'name' => 'required',
             'url' => 'required|url',
             'status' => 'required|numeric',
+            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|dimensions:min_width=1920,min_height=850',
         ]);
 
         if ($request->file('image')) {

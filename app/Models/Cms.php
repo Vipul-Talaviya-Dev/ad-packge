@@ -5,12 +5,16 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class OrderProduct extends Model
+class Cms extends Model
 {
     use SoftDeletes;
-
+    /**
+     * The attributes that are mass assignable.
+     *
+     * @var array
+     */
     protected $fillable = [
-        'order_id', 'user_id', 'address_id', 'product_id', 'price', 'qty', 'order_status'
+        'title', 'description',
     ];
 
     protected $dates = [
@@ -18,9 +22,4 @@ class OrderProduct extends Model
         'updated_at',
         'deleted_at'
     ];
-
-    public function product()
-	{
-		return $this->belongsTo(Product::class);
-	}
 }

@@ -24,7 +24,7 @@ class LoginController extends Controller
         ]);
         if ($admin = Admin::where('email', $request->get('email'))->first()) {
             if (Hash::check($request->get('password'), $admin->password)) {
-                Auth::login($admin);
+                \Session::put('admin', $admin);
                 return redirect(route('admin.dashboard'));
             } else {
                 return redirect()->back()->with(['message' => 'Invalid Email Or Password. ']);
@@ -35,7 +35,7 @@ class LoginController extends Controller
 
     public function logout()
     {
-        \Auth::logout();
+        \Session::forget('admin');
         return redirect('/');
     }
 }

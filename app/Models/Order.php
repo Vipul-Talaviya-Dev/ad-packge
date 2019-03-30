@@ -10,7 +10,7 @@ class Order extends Model
     use SoftDeletes;
 
     protected $fillable = [
-        'user_id', 'address_id', 'product_id', 'price', 'shipping_charge', 'gst', 'qty', 'total_amount', 'cart_amount', 'order_status', 'payment_status', 'payment_reference'
+        'user_id', 'address_id', 'shipping_charge', 'gst', 'total_amount', 'cart_amount', 'payment_mode', 'payment_reference', 'payment_response', 'order_status', 'payment_status',
     ];
 
     protected $dates = [

@@ -104,10 +104,10 @@ b, strong, .bold {
   float: left;
   margin-right: 20px;
 }
-#memo .logo img {
+/*#memo .logo img {
   width: 150px;
   height: 100px;
-}
+}*/
 #memo .company-info {
   float: right;
   text-align: right;

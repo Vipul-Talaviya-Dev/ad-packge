@@ -1,4 +1,4 @@
-<div id="cartLoad" class="modal fade in top-65" role="dialog">
+<div id="cartLoad" class="modal fade in top-65" role="dialog" style="z-index: 99999;">
 	<div class="modal-dialog modal-lg">
 		<div class="modal-content">
 			<div class="modal-header" style="border-bottom: 1px solid #e5e5e5;">

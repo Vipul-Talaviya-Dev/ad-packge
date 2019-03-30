@@ -19,7 +19,7 @@
             <li class="dropdown dropdown-user">
                 <a class="dropdown-toggle" data-toggle="dropdown">
                     <img src="/assets/images/images (11).jpg" alt="">
-                    <span>{{ ucwords(\Auth::user()->name)}}</span>
+                    <span>{{ ucwords(Session::get('admin')->name)}}</span>
                     <i class="caret"></i>
                 </a>
 

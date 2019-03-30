@@ -5,11 +5,11 @@
             <div class="row">
                 <div class="col col-md-3 col-sm-6">
                     <div class="widget about-widget">
-                        <div class="footer-logo"><img src="/front/images/logo.png" alt></div>
+                        <div class="footer-logo"><img src="/front/images/logo.jpg" alt></div>
                         <ul class="contact-info">
-                            <li><i class="fa fa-home"></i> 555 Main St, Salt Lake City, UT 84101</li>
-                            <li><i class="fa fa-phone"></i> +1-(547)-257</li>
-                            <li><i class="fa fa-home"></i> Working Hours: <br>Mon-Fri (9 am - 8 pm)</li>
+                            <li><i class="fa fa-home"></i> {{ $appContent->address }}</li>
+                            <li><i class="fa fa-phone"></i> {{ $appContent->support_mobile }}</li>
+                            <li><i class="fa fa-home"></i> Working Hours: <br>Mon-Sat (10 am - 7 pm)</li>
                         </ul>
                     </div>
                 </div>
@@ -18,11 +18,10 @@
                     <div class="widget service-links-widget">
                         <h3>Services</h3>
                         <ul>
-                            <li><a href="javascript:void(0);">Agriculture Processing</a></li>
-                            <li><a href="javascript:void(0);">Chemical Research</a></li>
-                            <li><a href="javascript:void(0);">Metal Engineering</a></li>
-                            <li><a href="javascript:void(0);">Mechanical Engineering</a></li>
-                            <li><a href="javascript:void(0);">Petroleum &amp; Gas</a></li>
+                            <li><a href="javascript:void(0);">Corrugated Box</a></li>
+                            <li><a href="javascript:void(0);">Courier Bags</a></li>
+                            <li><a href="javascript:void(0);">Stretch Film</a></li>
+                            <li><a href="javascript:void(0);">BOPP Tape</a></li>
                         </ul>
                     </div>
                 </div>
@@ -31,12 +30,11 @@
                     <div class="widget quick-links-widget">
                         <h3>Navigation</h3>
                         <ul>
-                            <li><a href="javascript:void(0);">Home</a></li>
-                            <li><a href="javascript:void(0);">About</a></li>
-                            <li><a href="javascript:void(0);">Service</a></li>
-                            <li><a href="javascript:void(0);">Projects</a></li>
-                            <li><a href="javascript:void(0);">Pricing</a></li>
-                            <li><a href="javascript:void(0);">News</a></li>
+                            <li><a href="/">Home</a></li>
+                            <li><a href="{{ route('user.aboutUs') }}">About Us</a></li>
+                            <li><a href="{{ route('user.contactUs') }}">Contact Us</a></li>
+                            <li><a href="{{ route('user.faq') }}">FAQ</a></li>
+                            <li><a href="{{ route('user.termsCondition') }}">Terms &amp; Conditions</a></li>
                         </ul>
                         <ul>
                             <li><a href="javascript:void(0);">Gallery</a></li>

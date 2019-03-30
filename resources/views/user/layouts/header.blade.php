@@ -8,13 +8,18 @@
                             <div>
                                 <i class="fa fa-location-arrow"></i>
                                 <div class="details">
-                                    <p>5523 Research Park Drive, Suite 110</p>
+                                    <?php
+                                    $address = explode(',', $appContent->address);
+                                    ?>
+                                    <p>{{ $address[0] }}</p>
+                                    <span>{{ ($address[1]) ? $address[1] : '' }}</span>
                                 </div>
                             </div>
                             <div>
                                 <i class="fa fa-phone"></i>
                                 <div class="details">
-                                    <p>+012 (3546) 547</p>
+                                    <p>{{ $appContent->support_mobile }}</p>
+                                    <span>{{ $appContent->support_email }}</span>
                                 </div>
                             </div>
                         </div>
@@ -24,11 +29,10 @@
                     <div class="social">
                         <span>Follow: </span>
                         <ul class="social-links">
-                            <li><a href="javascript:void(0);"><i class="fa fa-facebook"></i></a></li>
-                            <li><a href="javascript:void(0);"><i class="fa fa-twitter"></i></a></li>
-                            <li><a href="javascript:void(0);"><i class="fa fa-linkedin"></i></a></li>
-                            <li><a href="javascript:void(0);"><i class="fa fa-pinterest"></i></a></li>
-                            <li><a href="javascript:void(0);"><i class="fa fa-rss"></i></a></li>
+                            <li><a href="{{ ($appContent->fb_link) ? $appContent->fb_link  : 'javascript:void(0);' }}" target="_blank"><i class="fa fa-facebook"></i></a></li>
+                            <li><a href="{{ ($appContent->twitter_link) ? $appContent->twitter_link  : 'javascript:void(0);' }}" target="_blank"><i class="fa fa-twitter"></i></a></li>
+                            <li><a href="{{ ($appContent->instagram_link) ? $appContent->instagram_link  : 'javascript:void(0);' }}" target="_blank"><i class="fa fa-linkedin"></i></a></li>
+                            <li><a href="{{ ($appContent->google_link) ? $appContent->google_link  : 'javascript:void(0);' }}" target="_blank"><i class="fa fa-google-plus"></i></a></li>
                         </ul>
                     </div>
                 </div>
@@ -41,9 +45,10 @@
             <div class="row">
                 <div class="col col-sm-3">
                     <div class="site-logo">
-                        <a href="/"><img src="/front/images/logo-2.png" alt></a>
+                        <a href="/"><img src="/front/images/logo.jpg" alt></a>
                     </div>
                 </div>
+                @if(false)
                 <div class="col col-sm-9">
                     <div class="awards">
                         <div>
@@ -62,6 +67,7 @@
                         </div>
                     </div>
                 </div>
+                @endif
             </div>
         </div>
     </div>
@@ -82,14 +88,13 @@
                 <ul class="nav navbar-nav">
                     <li><a href="{{ route('user.index') }}">Home</a></li>
                     <li><a href="{{ route('user.aboutUs') }}">About</a></li>
-                    <li><a href="javascript:void(0);">Services</a></li>
                     <li><a href="{{ route('user.products') }}">Boxes</a></li>
-                    <li><a href="javascript:void(0);">Contact</a></li>
+                    <li><a href="{{ route('user.contactUs') }}">Contact</a></li>
                     @if(!\Auth::check())
-                        <li><a href="{{ route('user.loginForm') }}">Login</a></li>
+                    <li><a href="{{ route('user.loginForm') }}">Login</a></li>
                     @else
-                        <li><a href="{{ route('user.myAccount') }}">{{ \Auth::user()->first_name }}</a></li>
-                        <li><a href="{{ route('user.logout') }}">Logout</a></li>
+                    <li><a href="{{ route('user.myAccount') }}">{{ \Auth::user()->first_name }}</a></li>
+                    <li><a href="{{ route('user.logout') }}">Logout</a></li>
                     @endif
                 </ul>
             </div><!-- end of nav-collapse -->

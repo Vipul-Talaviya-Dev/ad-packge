@@ -69,6 +69,7 @@
                                                             <span style="color: red;"><i class="fa fa-times-circle"></i> &nbsp;{{$error}}</span>
                                                         @endforeach
                                                     @endif
+                                                    <span><b>Note: </b> Image dimension => 1920 X 850 </span>
                                                 </div>
                                                 <div class="col-lg-1"></div>
                                             </div>

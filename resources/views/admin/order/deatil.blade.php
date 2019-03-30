@@ -48,11 +48,31 @@
             <!-- Traffic sources -->
             <div class="panel panel-flat">
                 <div class="panel-heading">
-                    <h1 class="panel-title">Order Detail</h1>
+                    <h1 class="panel-title">Order Detail
+                        <a href="javascript:history.back()" class="btn btn-info pull-right">Go Back</a>
+                    </h1>
                 </div>
                 <hr/>
                 <div class="container-fluid">
                     <div class="content">
+                        <div class="row">
+                            <form method="post" action="{{ route('admin.statusChange', ['id' => $order->id]) }}">
+                                {{ csrf_field() }}
+                                <div class="form-group col-md-3">
+                                    <label>Order Status</label>
+                                    <select name="status" class="form-control">
+                                        <option value="">-- Select Status --</option>
+                                        @foreach(\App\Helper\Helper::orderStatus() as $key => $status)
+                                            <option value="{{ $key }}" {{ ($order->order_status == $key) ? 'selected' : '' }}>{{ $status }}</option>
+                                        @endforeach
+                                    </select>
+                                </div>
+                                <div class="form-group col-md-3">
+                                    <p>&nbsp;</p>
+                                    <button class="btn btn-info" type="submit" style="margin-top: -5px;">Save</button>
+                                </div>
+                            </form>
+                        </div>
                         <div class="panel panel-flat">
                             <table class="table">
                                 <thead>
@@ -69,8 +89,8 @@
                                     @foreach($order->orderProducts as $key => $orderProduct)
                                     <tr>
                                         <td>{{ $order->id }}</td>
-                                        <td>{{ $order->user->name }}<br>({{ $order->user->mobile }})</td>
-                                        <td><img src="{{ \Cloudder::secureShow($orderProduct->product->thumb_image) }}" data-imagezoom="true" style="width: 50px;" class="img-responsive" alt="{{ $orderProduct->product->name }}"></td>
+                                        <td>{{ $order->user->fullName() }}<br>({{ $order->user->mobile }})</td>
+                                        <td><img src="{{ \Cloudder::secureShow($orderProduct->product->image) }}" data-imagezoom="true" style="width: 50px;" class="img-responsive" alt="{{ $orderProduct->product->name }}"></td>
                                         <td>{{ $orderProduct->qty }}</td>
                                         <td>{{ $orderProduct->price }}</td>
                                         <td>{{ $order->created_at }}</td>
@@ -85,7 +105,7 @@
                                     <tbody>
                                         <tr>
                                             <td colspan="4">Subtotal</td>
-                                            <td> Rs.<span >{{ $order->total }}</span></td>
+                                            <td> Rs.<span >{{ $order->total_amount }}</span></td>
                                         </tr>
                                     </tbody>
                                     <tfoot>

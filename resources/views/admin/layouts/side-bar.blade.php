@@ -5,7 +5,7 @@
                 <div class="media">
                     <a href="javascript:void(0);" class="media-left"><img src="/assets/images/images (11).jpg" class="img-circle img-sm" alt=""></a>
                     <div class="media-body">
-                        <span class="media-heading text-semibold">{{ ucwords(\Auth::user()->name)}}</span>
+                        <span class="media-heading text-semibold">{{ ucwords(Session::get('admin')->name)}}</span>
                         <div class="text-size-mini text-muted"></div>
                     </div>
                     <div class="media-right media-middle">
@@ -29,26 +29,17 @@
                         </ul>
                     </li>
                         <!-- <li><a href="{{ route('admin.offers') }}"><i class="icon-gift"></i> <span>Offers</span></a></li> -->
-                        <li>
-                            <a href="javascript:void(0);"><i class="icon-bag"></i> <span>Order's</span></a>
-                            <ul>
-                                <li><a href="javascript:void(0);"><i class="icon-bag"></i> Order</a></li>
-                                <li><a href="javascript:void(0);"><i class="icon-cart-add"></i> Assign
-                                Order</a></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="javascript:void(0);"><i class="icon-tree6"></i> <span>Module</span></a>
-                            <ul>
-                                <li><a href="{{ route('admin.banners') }}"><i class="icon-stack3"></i> Banner</a></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="javascript:void(0);"><i class="icon-users2"></i> <span>User</span></a>
-                            <ul>
-                                <li><a href="javascript:void(0);"><i class="icon-users"></i> Customer</a></li>
-                            </ul>
-                        </li>
+                    <li><a href="{{ route('admin.orders') }}"><i class="icon-bag"></i> Order</a></li>
+                    <li>
+                        <a href="javascript:void(0);"><i class="icon-tree6"></i> <span>Module</span></a>
+                        <ul>
+                            <li><a href="{{ route('admin.appContent') }}"><i class="icon-stack3"></i> App Content</a></li>
+                            <li><a href="{{ route('admin.banners') }}"><i class="icon-stack3"></i> Banner</a></li>
+                            <li><a href="{{ route('admin.contacts') }}"><i class="icon-stack3"></i> Contacts</a></li>
+                            <li><a href="{{ route('admin.cms') }}"><i class="icon-stack3"></i> CMS</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="{{ route('admin.users') }}"><i class="icon-users2"></i> <span>User</span></a></li>
                     </ul>
                 </div>
             </div>

@@ -15,8 +15,7 @@
     <div id="container">
       <section id="memo">
         <div class="logo">
-          <h1>Logo</h1>
-          <!-- <img data-logo="{company_logo}" /> -->
+          <img src="{{ URL::asset('front/images/logo.jpg') }}" />
         </div>
         <!-- <div class="company-info">
           <div>{company_name}</div>
@@ -33,7 +32,7 @@
 
       <section id="invoice-title-number">
         <span id="title">Invoice</span>
-        <span id="number"># {{ 'FHN'.date('Ymd', strtotime($order['created_at'])).$order->id }}</span>
+        <span id="number"># {{ $order->orderId() }}</span>
         
       </section>
       
@@ -42,7 +41,7 @@
       <section id="client-info">
         <span>To:</span>
         <div>
-          <span class="bold">{{ $order->user->name }}</span>
+          <span class="bold">{{ $order->user->fullName() }}</span>
         </div>
         
         <div>
@@ -73,7 +72,6 @@
             <th>Item</th>
             <th>Quantity</th>
             <th>Price</th>
-            <th>Discount</th>
             <th>Total</th>
           </tr>
           @foreach($order->orderProducts as $key =>  $orderProduct)
@@ -82,7 +80,6 @@
             <td>{{ $orderProduct->product->name }}</td>
             <td>{{ $orderProduct->qty }}</td>
             <td>{{ $orderProduct->price }}</td>
-            <td>{{ $orderProduct->discount }}</td>
             <td>{{ $orderProduct->price * $orderProduct->qty }}</td>
           </tr>
           @endforeach
@@ -104,7 +101,7 @@
           
           <tr class="amount-total">
             <th> Total</th>
-            <td>{{ $order->total }}</td>
+            <td>{{ $order->total_amount }}</td>
           </tr>
           
           <tr data-hide-on-quote="true">

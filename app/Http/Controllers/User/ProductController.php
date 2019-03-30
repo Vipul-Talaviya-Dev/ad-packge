@@ -178,16 +178,11 @@ class ProductController extends Controller
         $order = new Order;
         $order->user_id = $user->id;
         $order->address_id = Session::get('addressId');
-        // $order->payment_mode = $request->get('payment_option') ? $request->get('payment_option') : 2;
-        $order->price = Session::get('discount') ?: 0;
+        $order->payment_mode = $request->get('payment_option') ? $request->get('payment_option') : 2;
         $order->cart_amount = (Session::get('order')['final_amount'] - Session::get('discount')) + 0;
         $order->total_amount = (Session::get('order')['final_amount'] - Session::get('discount')) + 0;
-        $order->shipping_charge = 0;
-        $order->gst = 0;
-        $order->qty = 0;
-        $order->payment_reference = 0;
-        $order->payment_status = 1;
-        $order->order_status = 2;
+        $order->payment_status = ($request->get('payment_option') == 1) ? 2 : 1;
+        $order->order_status = ($request->get('payment_option') == 1) ? 3 : 1;
         $order->save();
         
         $orderId = $order->id;
@@ -199,10 +194,8 @@ class ProductController extends Controller
             $orderProduct->address_id = Session::get('addressId');
             $orderProduct->product_id = $product->id;
             $orderProduct->price = $product->price;
-            $orderProduct->cart_amount = (Session::get('order')['final_amount'] - Session::get('discount')) + 0;
-            $orderProduct->total_amount = (Session::get('order')['final_amount'] - Session::get('discount')) + 0;
             $orderProduct->qty = $data['qty'];
-            $orderProduct->order_status = 2;
+            $orderProduct->order_status = ($request->get('payment_option') == 1) ? 3 : 1;;
             $orderProduct->save();
 
             $product->qty = $product->qty - $data['qty'];

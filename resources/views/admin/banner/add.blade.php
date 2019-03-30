@@ -33,9 +33,9 @@
                                         <fieldset class="content-group">
                                             <div class="form-group">
                                                 <div class="col-lg-1"></div>
-                                                <label class="col-lg-2 control-label text-semibold">Name :</label>
+                                                <label class="col-lg-2 control-label text-semibold">Title :</label>
                                                 <div class="col-lg-8">
-                                                    <input type="text" name="name" value="{{ old('name') }}" class="form-control"  placeholder="Enter Banner Name" autocomplete="off" required="">
+                                                    <input type="text" name="name" value="{{ old('name') }}" class="form-control"  placeholder="Enter Banner Title" autocomplete="off" required="">
                                                     @if($errors->get('name'))
                                                         @foreach($errors->get('name') as $error)
                                                             <span style="color: red;"><i class="fa fa-times-circle"></i> &nbsp;{{$error}}</span>
@@ -70,10 +70,10 @@
                                                             <span style="color: red;"><i class="fa fa-times-circle"></i> &nbsp;{{$error}}</span>
                                                         @endforeach
                                                     @endif
+                                                <span><b>Note: </b> Image dimension => 1920 X 850 </span>
                                                 </div>
                                                 <div class="col-lg-1"></div>
                                             </div>
-                                            {{--Status--}}
                                             <div class="form-group">
                                                 <div class="col-lg-1"></div>
                                                 <label class="col-lg-2 control-label text-semibold">Status:</label>
