@@ -57,7 +57,7 @@ table.subgroupChart {
 }
 .chartQtyInput {
   font-size: 13px;
-  width: 53px;
+  width: 85px;
   height: 25px;
   text-align: center;
 }
@@ -109,7 +109,7 @@ table.subgroupChart {
   vertical-align: middle;
   text-indent: 0pt;
   white-space: nowrap;
-  width:  62px;
+  width:  101px;
   height: 30px;
   BORDER-TOP: #999999 0.75pt solid;
   BORDER-BOTTOM: #999999 0.75pt solid;
@@ -243,10 +243,11 @@ table.subgroupChart {
   padding-right: 9pt;
   width: 30pt;
   height: 19px;
-  BORDER-TOP: #999999 0.0pt solid;
+  border: 1px solid #999999;
+  /*BORDER-TOP: #999999 0.0pt solid;
   BORDER-BOTTOM: #999999 0.75pt solid;
   BORDER-LEFT: #999999 0.0pt solid;
-  BORDER-RIGHT: #999999 0.0pt solid;
+  BORDER-RIGHT: #999999 0.0pt solid;*/
 }
 .priceCellwebPriceFirst {
   font-family: "AvantGardeGothic", Arial, Helvetica, sans-serif;

@@ -5,17 +5,22 @@ namespace App\Http\Controllers\User;
 use Mail;
 use Auth;
 use Session;
-use App\Models\Product;
 use App\Models\Order;
+use App\Models\Product;
+use App\Models\Category;
 use App\Models\OrderProduct;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
 class ProductController extends Controller
 {
-    public function index()
+    public function index(Request $request, $slug)
     {
-    	$products = Product::latest()->active()->get();
+        if(!$category = Category::where('slug', $slug)->first()) {
+            return redirect()->back();
+        }
+
+    	$products = Product::latest()->where('category_id', $category->id)->active()->get();
 
     	return view('user.products', [
     		'products' => $products

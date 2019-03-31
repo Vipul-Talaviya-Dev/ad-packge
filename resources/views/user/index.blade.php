@@ -107,12 +107,26 @@
                         <ul class="nav navbar-nav">
                             <li><a href="/">Home</a></li>
                             <li><a href="/about-us">About</a></li>
-                            <li><a href="{{ route('user.products') }}">Boxes</a></li>
+                            <li class="menu-item-has-children">
+                                <a href="javascript:void(0);">Products</a>
+                                <ul class="sub-menu">
+                                    @foreach($categories as $category)
+                                        <li><a href="{{ route('user.products', ['slug' => $category->slug]) }}">{{ $category->name }}</a></li>
+                                    @endforeach    
+                                </ul>
+                            </li>
                             <li><a href="{{ route('user.contactUs') }}">Contact</a></li>
                             @if(!\Auth::check())
                                 <li><a href="{{ route('user.loginForm') }}">Login</a></li>
                             @else
-                                <li><a href="{{ route('user.myAccount') }}">{{ \Auth::user()->first_name }}</a></li>
+                                <li class="menu-item-has-children">
+                                    <a href="javascript:void(0);">{{ \Auth::user()->first_name }}</a>
+                                    <ul class="sub-menu">
+                                        <li><a href="{{ route('user.myProfile') }}">Profile</a></li>
+                                        <li><a href="{{ route('user.myAccount') }}">Orders</a></li>
+                                        <li><a href="{{ route('user.logout') }}">Logout</a></li>
+                                    </ul>
+                                </li>
                             @endif
                         </ul>
                     </div><!-- end of nav-collapse -->

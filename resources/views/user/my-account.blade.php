@@ -1,57 +1,98 @@
 @extends('user.layouts.main')
 
-@section('title', 'My Account')
+@section('title', 'My Profile')
 
 @section('css')
-<link rel="stylesheet" type="text/css" href="http://fashion.altsolution.in/front/css/custom.css">
 <style type="text/css">
-    #cartLoad, #myModal {
-     top: 0; 
+    .section-padding {
+        padding: 0;
     }
 </style>
 @endsection
 @section('content')
-<section class="section-padding offer-section">
+<!-- start contact-pg-section -->
+<section class="contact-pg-section section-padding">
     <div class="container">
-        <div class="col-md-9 col-xs-12 margin-top-10">
-        @if(count($orders) == 0)
-        <div class="fsn-box pck-box-shadow text-center" >
-            <h3>Hey, There are no any Order history available 
-                <a href="{{ route('user.index') }}"><b class="red">Order Now!</b></a>
-            </h3> 
-        </div>
-        @endif
-        @foreach($orders as $order)
-        <?php
-            $product = $order->product;
-        ?>
-        <div class="shopping-order-box">
-            <div class="row">
-                <div class="col-md-3">
-                    <span class="timetitle btimes"><a href="javascript:void(0);"><img class="track-img-thumb" src="{{ \Cloudder::secureShow($product->image) }}" alt="{{ $product->name }}" width="72" height="72"></a></span>
+            @if ($errors->any())
+                <div class="alert alert-danger">
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
                 </div>
-                <div class="col-md-3">
-                    <a href="javascript:void(0);" target="_blank" class="btn btn-cart btn-xs black-text">GET INVOICE<div class="ripple-wrapper"></div></a>
-                </div>
-                <div class="col-md-3 text-center">
-                    <span class="timetitle atimes">{{ 'ADPACKING'.date('Ymd', strtotime($order->created_at)).$order->order_id }}</span><br>
-                    <span class="font-size-10 green">Placed On {{ date('d M, Y', strtotime($order->created_at)) }}</span>
-                </div>
-                <div class="col-md-3 text-center">
-                    <span class="timetitle atimes">Rs. {{ $order->price }}</span><br>
-                    <span class="bus-order-location">Qty : {{ $order->qty }} </span>
-                </div>
-            </div>
-            <p><br></p>
-            @if(false)
-            <span class="line-divider-dashed1"></span>
-            <span>7-Day Easy Returns Policy period has ended. You cannot return / replace your product now.</span>
             @endif
+            <div class="col col-xs-12">
+                <form class="contact-form form contact-validation-active row" id="profile" method="post" action="{{ route('user.profileUpdate') }}">
+                    {{ csrf_field() }}
+                    <div class="col col-sm-6">
+                        <label for="f-name">First Name</label>
+                        <input type="text" class="form-control" autocomplete="off" id="f-name" name="f_name" value="{{ $user->first_name }}">
+                    </div>
+                    <div class="col col-sm-6">
+                        <label for="l-name">Last Name</label>
+                        <input type="text" class="form-control" autocomplete="off" id="l-name" name="l_name" value="{{ $user->last_name }}">
+                    </div>
+                    <div class="col col-sm-6">
+                        <label for="email">Email</label>
+                        <input type="email" class="form-control" autocomplete="off" id="email" name="email" value="{{ $user->email }}">
+                    </div>
+                    <div class="col col-sm-6">
+                        <label for="phone">Mobile</label>
+                        <input type="text" class="form-control" autocomplete="off" id="phone" name="phone" value="{{ $user->mobile }}">
+                    </div>
+                    <div class="col col-sm-12 submit-btn">
+                        <button class="theme-btn">Update</button>
+                        <div id="loader">
+                            <i class="fa fa-refresh fa-spin fa-3x fa-fw"></i>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="col col-xs-12"><p><br></p></div>
         </div>
-        @endforeach
-        <p><br></p>
-    </div>
-    </div> 
+    </div> <!-- end container -->
 </section>
+<!-- end contact-pg-section -->
+@endsection
+@section('js')
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key"></script>
+<script type="text/javascript">
+    // Contact page form
+    $(document).ready(function() {
+        $("#profile").validate({
+            rules: {
+                f_name: {
+                    required: true,
+                    minlength: 2
+                },
 
+                l_name: {
+                    required: true,
+                    minlength: 2
+                },
+
+                email: "required",
+
+                phone: {
+                  required: true,
+                  digits: true
+                },
+
+            },
+
+            messages: {
+                f_name: "Please enter your First name",
+                l_name: "Please enter your Last name",
+                email: "Please enter your email",
+                phone: "Please enter your mobile",
+            },
+
+            submitHandler: function (form) {
+                form.submit();
+            }
+
+        });
+    });
+</script>
 @endsection

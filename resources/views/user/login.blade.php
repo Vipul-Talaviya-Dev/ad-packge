@@ -12,7 +12,7 @@
 @section('content')
 <section class="section-padding offer-section">
 	<div class="container">
-		<div class="col-md-9 col-md-offset-3">
+		<div class="col-md-7 col-md-offset-5">
 			<nav>
 				<div class="nav nav-tabs nav-fill" id="nav-tab" role="tablist">
 					<a class="nav-item nav-link active btn theme-btn" id="nav-login-tab" data-toggle="tab" href="#nav-login" role="tab" aria-controls="nav-login" aria-selected="true">Sign in</a>

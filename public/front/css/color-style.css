@@ -651,7 +651,8 @@ img {
 
 .page-title:before {
   content: "";
-  background-color: rgba(0, 0, 0, 0.3);
+  background-color: inherit;
+  /*background-color: rgba(0, 0, 0, 0.3);*/
   width: 100%;
   height: 100%;
   position: absolute;
@@ -2764,7 +2765,7 @@ img {
 
 @media screen and (min-width: 992px) {
   .cart-contact .mini-cart {
-    margin-top: -4px;
+    margin-top: 8px;
   }
 }
 

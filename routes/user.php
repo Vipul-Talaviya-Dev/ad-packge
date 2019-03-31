@@ -19,7 +19,7 @@ Route::group(['namespace' => 'User', 'as' => 'user.'], function () {
     Route::post('inquiry', 'HomeController@inquiry')->name('inquiry');
     Route::get('faq', 'HomeController@faq')->name('faq');
     Route::get('terms-condition', 'HomeController@termsCondition')->name('termsCondition');
-    Route::get('boxes', 'ProductController@index')->name('products');
+    Route::get('shop/{slug}/products', 'ProductController@index')->name('products');
     Route::get('product/detail/{productSlug}', 'ProductController@detail')->name('product.detail');
     Route::get('product/add/to/cart/item', 'ProductController@addToCard')->name('addToCard');
 	Route::get('carts', 'ProductController@carts')->name('carts');
@@ -32,7 +32,7 @@ Route::group(['namespace' => 'User', 'as' => 'user.'], function () {
 	Route::post('signUp', 'LoginController@signUp')->name('signUp');
 
 	Route::group(['middleware' => 'userAuth'], function () {
-		Route::get('my-account', 'UserController@index')->name('myAccount');
+		Route::get('my-orders', 'UserController@index')->name('myAccount');
 		Route::get('my-profile', 'UserController@profile')->name('myProfile');
 		Route::post('my-update', 'UserController@profileUpdate')->name('profileUpdate');
 

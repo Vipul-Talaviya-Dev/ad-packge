@@ -5,6 +5,7 @@ namespace App\Http\Controllers\User;
 use App\Models\Cms;
 use App\Models\Banner;
 use App\Models\Inquiry;
+use App\Models\Category;
 use App\Models\Contact;
 use App\Models\Product;
 use App\Models\AppContent;
@@ -18,6 +19,7 @@ class HomeController extends Controller
     	return view('user.index', [
     		'appContent' => AppContent::find(1),
             'banners' => Banner::active()->get(),
+            'categories' => Category::active()->get(),
             'products' => Product::latest()->limit(10)->get()
     	]);
     }
