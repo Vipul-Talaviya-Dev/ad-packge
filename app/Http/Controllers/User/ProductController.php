@@ -58,7 +58,8 @@ class ProductController extends Controller
         }
 
         $productId = $request->get('product_id');
-        if($productId == "") {
+        $qty = $request->get('qty');
+        if($productId == "" && $qty == "") {
             return response()->json([
                 'status' => false,
                 'error' => 'Required Field'
@@ -77,11 +78,11 @@ class ProductController extends Controller
                     ]);
                 }   
             }
-            $items = array("cart_id" => $new_cart_id,"cart_product_id" => $productId);
+            $items = array("cart_id" => $new_cart_id, "cart_product_id" => $productId, "cart_product_qty" => $qty);
             Session::push('cart', $items);
         } else {
             // if session doesn't exist - create one
-            $items[] = array("cart_id" => "ADPACKING_1" ,"cart_product_id" => $productId);
+            $items[] = array("cart_id" => "ADPACKING_1" ,"cart_product_id" => $productId, "cart_product_qty" => $qty);
             Session::put('cart', $items);
         }   
 
@@ -193,18 +194,36 @@ class ProductController extends Controller
         $orderId = $order->id;
         foreach(Session::get('order')['product'] as $key => $data) {
             $product = Product::find($data['product_id']);
+            $subPrice = json_decode($product->prices_box);
+            $price = 0;
+            if($data['qty'] == 100) {
+                $price = $subPrice->first_100;
+            }
+
+            if($data['qty'] == 250) {
+                $price = $subPrice->second_250;
+            }
+
+            if($data['qty'] == 500) {
+                $price = $subPrice->third_500;
+            }
+
+            if($data['qty'] >= 1000) {
+                $price = $subPrice->four_1001;
+            }
+
             $orderProduct = new OrderProduct;
             $orderProduct->order_id = $order->id;
             $orderProduct->user_id = $user->id;
             $orderProduct->address_id = Session::get('addressId');
             $orderProduct->product_id = $product->id;
-            $orderProduct->price = $product->price;
+            $orderProduct->price = $price;
             $orderProduct->qty = $data['qty'];
-            $orderProduct->order_status = ($request->get('payment_option') == 1) ? 3 : 1;;
+            $orderProduct->order_status = ($request->get('payment_option') == 1) ? 3 : 1;
             $orderProduct->save();
 
-            $product->qty = $product->qty - $data['qty'];
-            $product->save();
+            /*$product->qty = $product->qty - $data['qty'];
+            $product->save();*/
         }
 
         Session::forget('cart');

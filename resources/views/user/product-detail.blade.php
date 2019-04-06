@@ -50,15 +50,35 @@ hr {
                         <i class="fa fa-star"></i>
                         <i class="fa fa-star-o"></i>
                     </div>
-                    @endif
                     <div class="price">
                         <span class="current"><i class="fa fa-rupee"></i> {{ $product->price }}</span>
                     </div>
+                    @endif
                     <div>
                         {!! $product->description !!}
                     </div>
-                    <hr>
+                    <p><br></p>
                     <div class="product-option">
+                        <div class="center">
+                            <h4>Price List</h4>
+                            <table class="table table-bordered">
+                                <tr>
+                                    <th class="text-center">100</th>
+                                    <th class="text-center">250</th>
+                                    <th class="text-center">500</th>
+                                    <th class="text-center">1000+</th>
+                                </tr>
+                                <?php
+                                    $subPrice = json_decode($product->prices_box);
+                                ?>
+                                <tr>
+                                    <td class="text-center"><i class="fa fa-rupee"></i> {{ $subPrice->first_100 }} / per box</td>
+                                    <td class="text-center"><i class="fa fa-rupee"></i> {{ $subPrice->second_250 }} / per box</td>
+                                    <td class="text-center"><i class="fa fa-rupee"></i> {{ $subPrice->third_500 }} / per box</td>
+                                    <td class="text-center"><i class="fa fa-rupee"></i> {{ $subPrice->four_1001 }} / per box</td>
+                                </tr>
+                            </table>
+                        </div>
                         <div class="form-group" style="width: 145px;">
                             <select name="qtySelect" class="form-control selectQty" id="selectQty{{ $product->id }}" data-id="{{ $product->id }}"> 
                                 <option value="" >-- Select one --</option>

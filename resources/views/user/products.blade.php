@@ -35,7 +35,7 @@
                                         </td>
                                     </tr>
                                     <tr class="subgroupChartHeader">
-                                        <td class="chartHeadLargeBaseline" colspan="2" rowspan="2" style="min-width: 250px; max-width: 250px;">MODEL NO.</td>
+                                        <td class="chartHeadLargeBaselines" colspan="2" rowspan="2" style="min-width: 250px; max-width: 250px;">Size Of Box</td>
                                         <td class="chartHeadLargeBaselines" rowspan="2" style="min-width: 131px; max-width: 131px;">INSIDE DIM.<br>L x W x H</td>
                                         <td class="chartHeadLargeBaselines" colspan="4" style="min-width: 321px; max-width: 321px;">PRICE PER BOX </td>
                                         <!-- <td class="chartHeadLargeBaselines" colspan="3" rowspan="2" style="min-width: 92px; max-width: 93px;">BUNDLE/<br>BALE QTY.</td>

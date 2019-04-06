@@ -125,11 +125,11 @@
 	<tr>
 		<td>
 			<div style="padding-left:185px;">
-				<a href="https://www.facebook.com/purchasekaro"><img src=""></a>
-				<a href="https://twitter.com/purchasekaro"><img src=""></a>
-				<a href="https://www.linkedin.com/company/purchasekaro-com"><img src=""></a>
-				<a href="https://plus.google.com/b/108977991095064028173/108977991095064028173"><img src=""></a>
-				<a href="https://www.youtube.com/channel/UCZ61J0rd7wzWrK7SIKas_cg"><img src=""></a>
+				<a href="javascript:void(0);"><img src=""></a>
+				<a href="javascript:void(0);"><img src=""></a>
+				<a href="javascript:void(0);"><img src=""></a>
+				<a href="javascript:void(0);"><img src=""></a>
+				<a href="javascript:void(0);"><img src=""></a>
 			</div>
 		</td>
 	</tr>

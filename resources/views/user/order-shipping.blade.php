@@ -57,15 +57,37 @@
                 <h5 class="order-boxos-header">Order Summary</h5><hr>
                 <div class="order-boxos-items">
                     <?php
-                    $total = 0;
-                    $finalAmount = 0;
+                        $total = 0;
+                        $finalAmount = 0;
+
                     ?>
                     @foreach(\Session::get('order')['product'] as $key => $data)
                     <?php
-                    $key++;
-                    $product = \App\Models\Product::find($data['product_id']);
-                    $total += ($product->price * $data['qty']);
-                    $finalAmount = $total;
+                        $key++;
+                        $product = \App\Models\Product::find($data['product_id']);
+                        // $total += ($product->price * $data['qty']);
+                        $subPrice = json_decode($product->prices_box);
+                        $price = 0;
+                        if($data['qty'] == 100) {
+                            $total += $subPrice->first_100 * $data['qty'];
+                            $price = $subPrice->first_100;
+                        }
+
+                        if($data['qty'] == 250) {
+                            $total += $subPrice->second_250 * $data['qty'];
+                            $price = $subPrice->second_250;
+                        }
+
+                        if($data['qty'] == 500) {
+                            $total += $subPrice->third_500 * $data['qty'];
+                            $price = $subPrice->third_500;
+                        }
+
+                        if($data['qty'] >= 1000) {
+                            $total += $subPrice->four_1001 * $data['qty'];
+                            $price = $subPrice->four_1001;
+                        }
+                        $finalAmount = $total;
                     ?>
                     <div class="order-boxos-item">
                         <div class="order-boxos-item-image">
@@ -74,7 +96,7 @@
                         <div class="order-boxos-item-detail">
                             <h5 style="line-height: 19px;">{{ $product->name }} <br></h5>
                             <div class="pull-left">Quantity : {{ $data['qty'] }}</div>
-                            <div class="pull-right">Rs. {{ ($product->price * $data['qty']) }}</div>
+                            <div class="pull-right">Rs. {{ ($price * $data['qty']) }}</div>
                         </div>
                     </div>
                     @endforeach

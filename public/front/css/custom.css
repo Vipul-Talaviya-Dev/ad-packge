@@ -60,6 +60,7 @@ table.subgroupChart {
   width: 85px;
   height: 25px;
   text-align: center;
+  background: #ffffff;
 }
 .chartCopyLargeCtrEight {
   padding: 5px;
@@ -84,15 +85,13 @@ table.subgroupChart {
   BORDER-RIGHT: #999999 1.5pt solid;
 }
 .button2, a.button2 {
-  background-color: #fff;
-  background-image: -webkit-linear-gradient(#fff 50%,#e7e7e7 50%,#f1f1f1);
-  background-image: linear-gradient(#fff 50%,#e7e7e7 50%,#f1f1f1);
-  border: 2px solid #f00;
+  background-color: #4ea1de;
+  border: 2px solid #4ea1de;
   border-radius: 3px;
-  color: #036;
+  color: #ffffff;
   cursor: pointer;
   display: inline-block;
-  padding: .1em .5em;
+  padding: 5px 7px 4px 9px;
   text-decoration: none;
 }
 .chartCopyLargeCtrSeven {
@@ -348,7 +347,7 @@ table.subgroupChart {
   vertical-align: middle;
   text-indent: 0pt;
   white-space: nowrap;
-  background-color: #FFFFFF;
+  background-color: #f3f3f3;
   height: 19px;
   BORDER-TOP: #999999 0.75pt solid;
   BORDER-BOTTOM: #999999 0.75pt solid;
@@ -391,7 +390,7 @@ table.subgroupChart {
   vertical-align: middle;
   text-indent: 0pt;
   white-space: nowrap;
-  background-color: #FFFFFF;
+  background-color: #f3f3f3;
   height: 19px;
   BORDER-TOP: #999999 0.75pt solid;
   BORDER-BOTTOM: #999999 0.75pt solid;
@@ -436,7 +435,7 @@ table.subgroupChart {
   vertical-align: middle;
   text-indent: 0pt;
   white-space: nowrap;
-  background-color: #FFFFFF;
+  background-color: #f3f3f3;
   height: 19px;
   BORDER-TOP: #999999 0.75pt solid;
   BORDER-BOTTOM: #999999 0.75pt solid;
@@ -458,7 +457,7 @@ table.subgroupChart {
   vertical-align: middle;
   text-indent: 0pt;
   white-space: nowrap;
-  background-color: #FFFFFF;
+  background-color: #f3f3f3;
   height: 19px;
   BORDER-TOP: #999999 0.75pt solid;
   BORDER-BOTTOM: #999999 0.75pt solid;

@@ -3,7 +3,7 @@
 @section('title', 'Payment')
 
 @section('css')
-<link rel="stylesheet" type="text/css" href="http://fashion.altsolution.in/front/css/payment.css">
+<link rel="stylesheet" type="text/css" href="/front/css/payment.css">
 <style type="text/css">
 #cartLoad, #myModal {
    top: 0; 
@@ -12,7 +12,8 @@
 @endsection
 
 @section('content')
-<section class="section-padding offer-section">
+<section class="">
+    <p><br></p>
     <div class="container">
         <div class="row">
             <form action="{{ route('user.order-place') }}" method="post">
@@ -29,11 +30,32 @@
                                         $total = 0;
                                         $finalAmount = 0;
                                     ?>
-                                        @foreach(\Session::get('order')['product'] as $key => $data)
+                                    @foreach(\Session::get('order')['product'] as $key => $data)
                                     <?php
                                         $key++;
                                         $product = \App\Models\Product::find($data['product_id']);
-                                        $total += ($product->price * $data['qty']);
+                                        // $total += ($product->price * $data['qty']);
+                                        $subPrice = json_decode($product->prices_box);
+                                        $price = 0;
+                                        if($data['qty'] == 100) {
+                                            $total += $subPrice->first_100 * $data['qty'];
+                                            $price = $subPrice->first_100;
+                                        }
+
+                                        if($data['qty'] == 250) {
+                                            $total += $subPrice->second_250 * $data['qty'];
+                                            $price = $subPrice->second_250;
+                                        }
+
+                                        if($data['qty'] == 500) {
+                                            $total += $subPrice->third_500 * $data['qty'];
+                                            $price = $subPrice->third_500;
+                                        }
+
+                                        if($data['qty'] >= 1000) {
+                                            $total += $subPrice->four_1001 * $data['qty'];
+                                            $price = $subPrice->four_1001;
+                                        }
                                         $finalAmount = $total;
                                     ?>
                                         <div class="row">
@@ -42,11 +64,12 @@
                                                     <img src="{{ \Cloudder::secureShow($product->image) }}" alt="{{ $product->name }}" class="cart-img-thumb">
                                                 </a>
                                             </div>
-                                            <div class="col-xs-4 col-md-5 order-pay">
-                                                <h5 style="line-height: 19px;">{{ $product->name }}</h5>
+                                            <div class="col-xs-2 col-md-3 order-pay">
+                                                <h5 style="line-height: 19px;">{{ substr($product->name, 0, 30).'...' }}</h5>
                                             </div>
+                                            <div class="col-xs-2 col-md-2 font-size-13"><i class="fa fa-rupee"></i> {{ $price }} / per box</div>
                                             <div class="col-xs-3 col-md-2 font-size-13">{{ $data['qty'] }} x Qty</div>
-                                            <div class="col-xs-2 col-md-3 font-size-13">Rs. {{ ($product->price * $data['qty']) }}</div>
+                                            <div class="col-xs-2 col-md-3 font-size-13">Rs. {{ ($price * $data['qty']) }}</div>
                                         </div>
                                         <hr>
                                     @endforeach
@@ -89,16 +112,6 @@
                                 </div>
                                 <div class="panel-collapse collapse in" id="collapse-2">
                                     <div class="panel-body">
-                                        <!-- Credit Card -->
-                                        <div class="radio radio-danger">
-                                            <label><input type="radio" class="payment_option" name="payment_option" value="101"><span class="circle"></span><span class="check"></span> Credit Card</label>
-                                            <!-- <ul class="payment_card_img">
-                                                <li><img src="/front/images/discover-curved-32px.png"></li><li><img src="/front/images/american-express-curved-32px.png"></li><li><img src="/front/images/mastercard-curved-32px.png"></li><li><img src="/front/images/visa-curved-32px.png"></li>
-                                            </ul> -->
-                                        </div>
-                                        <br>
-                                        <span>Note: Payments will be processed through a merchant account residing in <b>India</b></span>
-                                        <hr>
                                         <!-- Debit Card -->
                                         <div class="radio radio-danger">
                                             <label><input type="radio" class="payment_option" name="payment_option" value="2"><span class="circle"></span><span class="check"></span> Debit Card</label>
@@ -110,21 +123,7 @@
                                         <div class="radio radio-danger">
                                             <label><input type="radio" class="payment_option" name="payment_option" value="3"><span class="circle"></span><span class="check"></span> Net Banking</label>
                                             <a class="pull-right label label-success" data-style="toast" data-content="This is a toast! Lorem lipsum dolor sit amet..." data-toggle="snackbar" data-timeout="0">Details</a>
-                                        </div><hr>
-                                        <div class="radio radio-danger">
-                                            <label><input type="radio" class="payment_option" name="payment_option" value="1"><span class="circle"></span><span class="check"></span> Cash On Delivery</label>
-                                            <button class="btn btn-danger btn-xs pull-right cod_place_btn" type="submit" name="PLACE_ORDER" >Place Order</button>
-                                        </div><hr>
-                                        <div class="radio radio-danger">
-                                            <label><input type="radio" class="payment_option" name="payment_option" value="104"><span class="circle"></span><span class="check"></span> EMI Option</label>
-                                        </div><hr>
-                                        <div class="radio radio-danger">
-                                            <label><input type="radio" class="payment_option" name="payment_option" value="107"><span class="circle"></span><span class="check"></span> UPI</label>
                                         </div>
-                                        <!-- <hr> -->
-                                        <!-- <div class="radio radio-danger">
-                                            <label><input type="radio" class="payment_option" name="payment_option" value="1" checked><span class="circle"></span><span class="check"></span> Order Place</label>
-                                        </div> -->
                                     </div>
                                 </div>
                             </div>

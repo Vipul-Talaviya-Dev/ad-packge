@@ -28,7 +28,29 @@
 							<?php
 								$cartId++;
 								$product = \App\Models\Product::find($cart['cart_product_id']);
-								$total += $product->price;
+								$subPrice = json_decode($product->prices_box);
+								$price = 0;
+								if($cart['cart_product_qty'] == 100) {
+									$total += $subPrice->first_100 * $cart['cart_product_qty'];
+									$price = $subPrice->first_100;
+								}
+
+								if($cart['cart_product_qty'] == 250) {
+									$total += $subPrice->second_250 * $cart['cart_product_qty'];
+									$price = $subPrice->second_250;
+								}
+
+								if($cart['cart_product_qty'] == 500) {
+									$total += $subPrice->third_500 * $cart['cart_product_qty'];
+									$price = $subPrice->third_500;
+								}
+
+								if($cart['cart_product_qty'] >= 1000) {
+									$total += $subPrice->four_1001 * $cart['cart_product_qty'];
+									$price = $subPrice->four_1001;
+								}
+
+
 								$finalAmount = $total;
 							?>
 							<tr class="rem{{ $cartId }}">
@@ -40,19 +62,19 @@
 								<td class="invert">
 									<div class="quantity"> 
 										<div class="quantity-select">                           
-											<div class="entry value-minus btn-number" data-type="minus" data-field="{{ $product->id }}">&nbsp;</div>
-											<span><input type="text" style="text-align: center;" name="{{ $product->id }}" readonly data-field="{{ $product->id }}" class="value input-number update-qty" value="1" min="1" max="{{ $product->qty }}" size="2"></span>
-											<div class="entry value-plus btn-number" data-type="plus" data-field="{{ $product->id }}">&nbsp;
-											</div>
+											<!-- <div class="entry value-minus btn-number" data-type="minus" data-field="{{ $product->id }}">&nbsp;</div> -->
+											<span><input type="text" style="text-align: center;" name="{{ $product->id }}" readonly data-field="{{ $product->id }}" class="value input-number update-qty" value="{{ $cart['cart_product_qty'] }}" min="1" max="{{ $product->qty }}" size="2"></span>
+											<!-- <div class="entry value-plus btn-number" data-type="plus" data-field="{{ $product->id }}">&nbsp;
+											</div> -->
 										</div>
 									</div>
 									<span class="max-qty-reach-{{ $product->id }}"></span>
 								</td>
 								<td class="cart-td-border" style="display:none;">
 									<input type="hidden" class="p_id" value="{{ $product->id }}">
-									<span id="product_subtotal1{{ $product->id }}" >{{ $product->price }}</span>
+									<span id="product_subtotal1{{ $product->id }}" >{{ $price }}</span>
 								</td>
-								<td class="invert">Rs. <span class="cart-subtotal sellingprice" id="product_subtotal{{ $product->id }}">{{ $product->price }}</span></td>
+								<td class="invert">Rs. <span class="cart-subtotal sellingprice" id="product_subtotal{{ $product->id }}">{{ $price }}</span></td>
 								<td class="invert">
 									<span><button type="button" class="fa fa-times removeItem" data-id="{{ $cart['cart_id'] }}"></button></span>
 								</td>
