@@ -38,6 +38,7 @@
                             <li><a href="{{ route('admin.contacts') }}"><i class="icon-stack3"></i> Contacts</a></li>
                             <li><a href="{{ route('admin.inquiries') }}"><i class="icon-stack3"></i> Inquiries</a></li>
                             <li><a href="{{ route('admin.cms') }}"><i class="icon-stack3"></i> CMS</a></li>
+                            <li><a href="{{ route('admin.homeProducts') }}"><i class="icon-stack3"></i>Home Product</a></li>
                         </ul>
                     </li>
                     <li><a href="{{ route('admin.users') }}"><i class="icon-users2"></i> <span>User</span></a></li>

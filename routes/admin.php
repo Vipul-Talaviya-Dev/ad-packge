@@ -60,6 +60,14 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'control-panel','as' => 'admin
         Route::get('cms/{id}/edit', 'CmsController@edit')->name('cms.edit');
         Route::post('cms/{id}/update', 'CmsController@update')->name('cms.update');
 
+        // Home Product Controller
+        Route::get('home-products', 'HomeProductController@index')->name('homeProducts');
+        Route::get('home-product/add', 'HomeProductController@add')->name('homeProduct.add');
+        Route::post('home-product/create', 'HomeProductController@create')->name('homeProduct.create');
+        Route::get('home-product/{id}/edit', 'HomeProductController@edit')->name('homeProduct.edit');
+        Route::post('home-product/{id}/update', 'HomeProductController@update')->name('homeProduct.update');
+        Route::get('home-product/{id}/delete', 'HomeProductController@delete')->name('homeProduct.delete');
+
     });
 });
 

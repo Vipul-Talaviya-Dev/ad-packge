@@ -272,6 +272,7 @@
         </section>
         <!-- end cta -->
 
+        @if(count($products) > 0)
         <!-- start services-s3 -->
         <section class="services-s3 section-padding">
             <div class="container">
@@ -292,7 +293,7 @@
                                         <img src="{{ \Cloudder::secureShow($product->image, []) }}" alt="{{ $product->name }}">
                                     </div>
                                     <div class="details">
-                                        <h3><a href="{{ route('user.product.detail', ['productSlug' => $product->slug]) }}">{{ substr($product->name, 0, 30).'...' }}</a></h3>
+                                        <h3><a href="{{ route('user.products', ['slug' => $product->category->slug]) }}">{{ substr($product->name, 0, 30).'...' }}</a></h3>
                                     </div>
                                 </div>
                             </div>
@@ -303,6 +304,7 @@
             </div> <!-- end container -->
         </section>
         <!-- end services-s3 -->
+        @endif
 
         <!-- start contact-section -->
         <section id="contact-section" class="contact-section section-padding parallax" data-bg-image="/front/images/contact-section-bg.jpg">

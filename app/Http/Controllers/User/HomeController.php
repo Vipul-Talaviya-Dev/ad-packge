@@ -7,7 +7,7 @@ use App\Models\Banner;
 use App\Models\Inquiry;
 use App\Models\Category;
 use App\Models\Contact;
-use App\Models\Product;
+use App\Models\HomeProduct;
 use App\Models\AppContent;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -20,7 +20,7 @@ class HomeController extends Controller
     		'appContent' => AppContent::find(1),
             'banners' => Banner::active()->get(),
             'categories' => Category::active()->get(),
-            'products' => Product::latest()->limit(10)->get()
+            'products' => HomeProduct::active()->latest()->get()
     	]);
     }
 
