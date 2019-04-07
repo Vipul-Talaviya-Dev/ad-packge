@@ -187,9 +187,9 @@
                             <div class="col col-md-8 col-md-offset-2 slide-caption">
                                 <h2>{{ $banner->name }}</h2>
                                 <p>{{ $banner->description }}</p>
-                                <div class="btns">
+                                <!-- <div class="btns">
                                     <a href="{{ $banner->url }}" class="theme-btn">Click</a>
-                                </div>
+                                </div> -->
                             </div>
                         </div>
                     </div>

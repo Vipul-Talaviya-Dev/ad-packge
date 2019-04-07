@@ -90,7 +90,7 @@ hr {
                             </select> 
                             <input type="text" id="inputQty{{ $product->id }}" name="qty" class="form-control inputQty" maxlength="8" value="" style="display: none;" placeholder="Enter quantity">
                         </div>
-                        <p><a class="item_add btn theme-btn" href="javascript:void(0);" data-byNow="0" style="width: 145px;">Buy Now</a></p>
+                        <p><a class="item_add btn theme-btn" href="javascript:void(0);" data-byNow="0" data-id="{{ $product->id }}" style="width: 145px;">Buy Now</a></p>
                     </div> <!-- end option -->
                 </div> <!-- end product details -->
             </div> <!-- end col -->

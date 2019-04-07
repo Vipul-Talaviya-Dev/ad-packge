@@ -36,7 +36,8 @@ function max_length(c, b, a) {
 
 $(document).ready(function() {
     $("body").on("click", ".item_add", function() {
-        var p = parseInt($(".productId").val());
+        // var p = parseInt($(".productId").val());
+        var p = parseInt($(this).attr('data-id'));
         var inputQty = $("#inputQty"+p).val();
         var selectQty = $("#selectQty"+p).val();
         var q = 0;
