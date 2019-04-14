@@ -8,6 +8,11 @@
     #cartLoad, #myModal {
      top: 0; 
     }
+    .thanks_summary_text.total-pay {
+        text-align: right;
+        color: #b22222;
+        font-size: 18px;
+    }
 </style>
 @endsection
 
@@ -39,7 +44,7 @@
                                         </thead>
                                             @foreach($order->orderProducts as $orderProduct)
                                             <tr class="info">
-                                                <td>{{ 'FHN'.date('Ymd', strtotime($orderProduct->created_at)).$orderProduct->id }}</td>
+                                                <td>{{ $order->orderId() }}</td>
                                                 <td>{{ $orderProduct->product->name }}</td>
                                                 <td>Rs. {{ $orderProduct->price }}</td>
                                                 <td>{{ $orderProduct->qty }}</td>
@@ -60,8 +65,8 @@
                                                     <td align="left">Rs. {{ $order->discount }}</td>
                                                 </tr>
                                             @endif
-                                            <tr class="thanks_summary_text total">
-                                                <td colspan="4">Final Amount</td>
+                                            <tr class="thanks_summary_text total-pay">
+                                                <td colspan="4" align="right">Final Amount</td>
                                                 <td align="left">Rs. {{ $order->cart_amount }}</td>
                                             </tr>
                                         </table>                

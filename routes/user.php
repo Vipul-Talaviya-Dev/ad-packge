@@ -40,6 +40,10 @@ Route::group(['namespace' => 'User', 'as' => 'user.'], function () {
 		Route::post('order-shipping-detail', 'ProductController@shippingDetail')->name('shippingDetail');
 		Route::get('payment', 'ProductController@payment')->name('payment');
 		Route::post('order-place', 'ProductController@orderPlace')->name('order-place');
+
+		Route::get('order-confirm', 'PaymentController@orderConfirm')->name('orderConfirm');
+		Route::post('payment-success','PaymentController@paymentResponse')->name('paymentsuccess');
+		Route::post('payment-failure','PaymentController@paymentResponse')->name('paymentfailure');
 		Route::get('thanks', 'ProductController@thanks')->name('thanks');
 
 		Route::get('addresses', 'AddressController@index')->name('addresses');

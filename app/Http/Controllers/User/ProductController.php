@@ -235,8 +235,11 @@ class ProductController extends Controller
         Session::forget('addressId');
 
         Session::put('orderId', $orderId);
-        
-        return redirect(route('user.thanks'));
+        if($request->get('payment_option') == 1) {
+            return redirect(route('user.thanks'));
+        } else {
+            return redirect(route('user.orderConfirm'));
+        }
     }
 
     public function thanks(Request $request)
@@ -267,4 +270,5 @@ class ProductController extends Controller
             'address' => $address,
         ]);
     }
+    
 }

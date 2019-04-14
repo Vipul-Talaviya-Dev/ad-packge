@@ -12,7 +12,7 @@ $appContent = \App\Models\AppContent::find(1);
     <meta name="csrf-token" content="{{ csrf_token() }}">
     @yield('meta')
 
-    <title>@yield('title') | Ad Packing</title>
+    <title>@yield('title') | DAM Packs</title>
     
     <!-- Icon fonts -->
     <link rel="shortcut icon" type="image/png" href="/front/images/favicon.png"/>
